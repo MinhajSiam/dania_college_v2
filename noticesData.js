@@ -1,5 +1,4 @@
 const noticesData = [
-    { day: "05", month: "Aug", category: "Academic", title: "Demo", time: "2 hours ago", size: "245 KB", isNew: true },
     { day: "05", month: "Aug", category: "Academic", title: "Subject-wise list of selected candidates for class demonstration/ practical test", time: "2 hours ago", size: "245 KB", isNew: true },
     { day: "02", month: "Aug", category: "Admission", title: "HSC 1st Year (Session 2026-2027) Admission Guidelines and Necessary Documents", time: "3 days ago", size: "1.2 MB", isNew: false },
     { day: "02", month: "Aug", category: "Admission", title: "HSC 1st Year (Session 2026-2027) Admission Guidelines and Necessary Documents", time: "3 days ago", size: "1.2 MB", isNew: false },
