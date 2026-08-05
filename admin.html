@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Dania College</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'baf-blue': '#0a1e3f',
+                        'baf-gold': '#ffc107',
+                        'baf-red': '#e63946'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'sans-nav': ['Open Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-[#f4f7fe] font-sans-nav text-gray-800 overflow-x-hidden">
+
+    <!-- Mobile Sidebar Backdrop -->
+    <div id="sidebarBackdrop" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden transition-opacity"
+        onclick="toggleSidebar()"></div>
+
+    <!-- ================== SIDEBAR ================== -->
+    <aside id="sidebar"
+        class="fixed top-0 left-0 h-screen w-64 bg-baf-blue text-white shadow-2xl z-50 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 flex flex-col">
+        <!-- Logo Area -->
+        <div class="h-20 flex items-center gap-3 px-6 border-b border-white/10 bg-[#0d1b2a]">
+            <div class="w-10 h-10 bg-white rounded-full p-1 flex items-center justify-center">
+                <!-- <img src="assets/images/Dania_College_Logo.png" alt="Logo" class="w-full h-full object-contain"> -->
+                <i class="fa-solid fa-graduation-cap text-baf-blue text-xl"></i>
+            </div>
+            <div>
+                <h2 class="font-bold font-poppins text-lg tracking-wider text-baf-gold">DANIA</h2>
+                <p class="text-[10px] text-gray-400 uppercase tracking-widest -mt-1">Admin Panel</p>
+            </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="flex-1 overflow-y-auto py-6 px-4 space-y-2 font-poppins text-sm">
+            <a href="#"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-colors">
+                <i class="fa-solid fa-chart-pie w-5 text-center"></i> Dashboard
+            </a>
+
+            <!-- Active Menu Item -->
+            <a href="#"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg bg-baf-gold/10 text-baf-gold border-l-4 border-baf-gold transition-all shadow-sm">
+                <i class="fa-solid fa-bullhorn w-5 text-center"></i> Manage Notices
+            </a>
+
+            <a href="#"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-colors">
+                <i class="fa-regular fa-calendar-check w-5 text-center"></i> Manage Events
+            </a>
+
+            <a href="#"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-colors">
+                <i class="fa-regular fa-images w-5 text-center"></i> Photo Gallery
+            </a>
+
+            <a href="#"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-colors">
+                <i class="fa-solid fa-users w-5 text-center"></i> Teachers Panel
+            </a>
+        </div>
+
+        <!-- Bottom Area -->
+        <div class="p-4 border-t border-white/10">
+            <a href="#"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-red-500/20 hover:border-l-4 hover:border-red-500 transition-colors">
+                <i class="fa-solid fa-arrow-right-from-bracket w-5 text-center"></i> Logout
+            </a>
+        </div>
+    </aside>
+
+    <!-- ================== MAIN CONTENT AREA ================== -->
+    <main class="lg:ml-64 transition-all duration-300 min-h-screen flex flex-col">
+
+        <!-- Top Header -->
+        <header
+            class="h-20 bg-white shadow-sm border-b border-gray-100 flex items-center justify-between px-4 md:px-8 z-30 sticky top-0">
+            <div class="flex items-center gap-4">
+                <button onclick="toggleSidebar()"
+                    class="lg:hidden text-baf-blue text-2xl hover:text-baf-gold transition-colors focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <h1 class="text-xl font-bold text-gray-800 font-poppins hidden sm:block">Notices Management</h1>
+            </div>
+
+            <!-- User Profile & Notifications -->
+            <div class="flex items-center gap-5">
+                <button class="relative text-gray-500 hover:text-baf-blue transition-colors text-xl">
+                    <i class="fa-regular fa-bell"></i>
+                    <span
+                        class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-baf-red rounded-full border-2 border-white"></span>
+                </button>
+                <div class="flex items-center gap-3 border-l border-gray-200 pl-5 cursor-pointer group">
+                    <div class="text-right hidden md:block">
+                        <p class="text-sm font-bold text-gray-800 font-poppins leading-tight">Admin User</p>
+                        <p class="text-xs text-gray-500 font-medium">System Operator</p>
+                    </div>
+                    <div
+                        class="w-10 h-10 rounded-full bg-baf-blue text-baf-gold flex items-center justify-center font-bold text-lg border-2 border-transparent group-hover:border-baf-gold transition-all shadow-sm">
+                        A
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Page Content -->
+        <div class="p-4 md:p-8 flex-1">
+
+            <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+
+                <!-- Left: Upload Form -->
+                <div class="xl:col-span-1">
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8">
+                        <h3 class="text-lg font-bold text-baf-blue font-poppins mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-cloud-arrow-up text-baf-gold"></i> Upload New Notice
+                        </h3>
+
+                        <form onsubmit="handleNoticeSubmit(event)" class="space-y-5">
+
+                            <!-- Notice Title -->
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1.5 font-poppins">Notice
+                                    Title <span class="text-red-500">*</span></label>
+                                <input type="text" required placeholder="Enter notice title..."
+                                    class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-baf-blue focus:ring-2 focus:ring-baf-blue/20 outline-none transition-all text-sm">
+                            </div>
+
+                            <!-- Category & Date Row -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label
+                                        class="block text-sm font-semibold text-gray-700 mb-1.5 font-poppins">Category
+                                        <span class="text-red-500">*</span></label>
+                                    <select required
+                                        class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-baf-blue focus:ring-2 focus:ring-baf-blue/20 outline-none transition-all text-sm bg-white">
+                                        <option value="">Select...</option>
+                                        <option value="Academic">Academic</option>
+                                        <option value="Admission">Admission</option>
+                                        <option value="Events">Events</option>
+                                        <option value="General">General</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-1.5 font-poppins">Publish
+                                        Date <span class="text-red-500">*</span></label>
+                                    <input type="date" required
+                                        class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-baf-blue focus:ring-2 focus:ring-baf-blue/20 outline-none transition-all text-sm text-gray-600">
+                                </div>
+                            </div>
+
+                            <!-- File Upload Area (Custom Design) -->
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1.5 font-poppins">Attach PDF
+                                    File <span class="text-red-500">*</span></label>
+                                <div
+                                    class="relative border-2 border-dashed border-gray-300 rounded-lg p-6 flex flex-col items-center justify-center hover:bg-gray-50 hover:border-baf-blue transition-colors cursor-pointer group">
+                                    <i
+                                        class="fa-regular fa-file-pdf text-3xl text-gray-400 group-hover:text-baf-gold mb-2 transition-colors"></i>
+                                    <p class="text-sm text-gray-500 font-medium text-center"><span
+                                            class="text-baf-blue font-bold">Click to upload</span> or drag and drop</p>
+                                    <p class="text-xs text-gray-400 mt-1">PDF max size 5MB</p>
+                                    <input type="file" required accept=".pdf"
+                                        class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="pt-2">
+                                <button type="submit"
+                                    class="w-full bg-baf-blue hover:bg-[#0d1b2a] text-white font-bold py-3 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 font-poppins">
+                                    <i class="fa-solid fa-paper-plane"></i> Publish Notice
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right: Notices List Table -->
+                <div class="xl:col-span-2">
+                    <div
+                        class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col h-full">
+
+                        <!-- Table Header Controls -->
+                        <div
+                            class="p-6 border-b border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-4">
+                            <h3 class="text-lg font-bold text-gray-800 font-poppins">Recent Uploads</h3>
+                            <div class="relative w-full sm:w-64">
+                                <i
+                                    class="fa-solid fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                                <input type="text" placeholder="Search notices..."
+                                    class="w-full pl-9 pr-4 py-2 rounded-lg border border-gray-200 focus:border-baf-blue outline-none text-sm transition-all bg-gray-50 focus:bg-white">
+                            </div>
+                        </div>
+
+                        <!-- Data Table -->
+                        <div class="overflow-x-auto flex-1">
+                            <table class="w-full text-left border-collapse min-w-[700px]">
+                                <thead class="bg-gray-50 text-gray-500 text-xs uppercase font-poppins font-semibold">
+                                    <tr>
+                                        <th class="px-6 py-4 border-b border-gray-200">Date</th>
+                                        <th class="px-6 py-4 border-b border-gray-200">Title</th>
+                                        <th class="px-6 py-4 border-b border-gray-200">Category</th>
+                                        <th class="px-6 py-4 border-b border-gray-200 text-center">Status</th>
+                                        <th class="px-6 py-4 border-b border-gray-200 text-center">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-sm divide-y divide-gray-100">
+
+                                    <!-- Demo Row 1 -->
+                                    <tr class="hover:bg-gray-50/50 transition-colors">
+                                        <td class="px-6 py-4 whitespace-nowrap text-gray-600 font-medium">05 Aug, 2026
+                                        </td>
+                                        <td class="px-6 py-4 font-semibold text-baf-blue max-w-[250px] truncate">
+                                            Subject-wise list of selected candidates...</td>
+                                        <td class="px-6 py-4"><span
+                                                class="bg-blue-50 text-blue-600 px-2.5 py-1 rounded text-xs font-bold font-poppins">Academic</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-center"><span
+                                                class="bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Published</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-center">
+                                            <div class="flex items-center justify-center gap-2">
+                                                <button
+                                                    class="w-8 h-8 rounded bg-gray-100 text-gray-600 hover:bg-blue-100 hover:text-blue-600 transition-colors"
+                                                    title="Edit"><i class="fa-solid fa-pen text-xs"></i></button>
+                                                <button
+                                                    class="w-8 h-8 rounded bg-gray-100 text-gray-600 hover:bg-red-100 hover:text-red-600 transition-colors"
+                                                    title="Delete"><i class="fa-solid fa-trash text-xs"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Demo Row 2 -->
+                                    <tr class="hover:bg-gray-50/50 transition-colors">
+                                        <td class="px-6 py-4 whitespace-nowrap text-gray-600 font-medium">02 Aug, 2026
+                                        </td>
+                                        <td class="px-6 py-4 font-semibold text-baf-blue max-w-[250px] truncate">HSC 1st
+                                            Year Admission Guidelines...</td>
+                                        <td class="px-6 py-4"><span
+                                                class="bg-emerald-50 text-emerald-600 px-2.5 py-1 rounded text-xs font-bold font-poppins">Admission</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-center"><span
+                                                class="bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Published</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-center">
+                                            <div class="flex items-center justify-center gap-2">
+                                                <button
+                                                    class="w-8 h-8 rounded bg-gray-100 text-gray-600 hover:bg-blue-100 hover:text-blue-600 transition-colors"
+                                                    title="Edit"><i class="fa-solid fa-pen text-xs"></i></button>
+                                                <button
+                                                    class="w-8 h-8 rounded bg-gray-100 text-gray-600 hover:bg-red-100 hover:text-red-600 transition-colors"
+                                                    title="Delete"><i class="fa-solid fa-trash text-xs"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Demo Row 3 -->
+                                    <tr class="hover:bg-gray-50/50 transition-colors">
+                                        <td class="px-6 py-4 whitespace-nowrap text-gray-600 font-medium">20 Jul, 2026
+                                        </td>
+                                        <td class="px-6 py-4 font-semibold text-baf-blue max-w-[250px] truncate">
+                                            Schedule of Class Demo-2026...</td>
+                                        <td class="px-6 py-4"><span
+                                                class="bg-orange-50 text-orange-600 px-2.5 py-1 rounded text-xs font-bold font-poppins">Events</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-center"><span
+                                                class="bg-gray-200 text-gray-600 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Draft</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-center">
+                                            <div class="flex items-center justify-center gap-2">
+                                                <button
+                                                    class="w-8 h-8 rounded bg-gray-100 text-gray-600 hover:bg-blue-100 hover:text-blue-600 transition-colors"
+                                                    title="Edit"><i class="fa-solid fa-pen text-xs"></i></button>
+                                                <button
+                                                    class="w-8 h-8 rounded bg-gray-100 text-gray-600 hover:bg-red-100 hover:text-red-600 transition-colors"
+                                                    title="Delete"><i class="fa-solid fa-trash text-xs"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Table Footer / Pagination -->
+                        <div
+                            class="p-4 border-t border-gray-100 flex items-center justify-between text-sm text-gray-500">
+                            <span>Showing 1 to 3 of 45 entries</span>
+                            <div class="flex gap-1">
+                                <button
+                                    class="px-3 py-1 rounded border border-gray-200 hover:bg-gray-100 transition-colors disabled:opacity-50">Prev</button>
+                                <button
+                                    class="px-3 py-1 rounded bg-baf-blue text-white font-medium shadow-sm">1</button>
+                                <button
+                                    class="px-3 py-1 rounded border border-gray-200 hover:bg-gray-100 transition-colors">2</button>
+                                <button
+                                    class="px-3 py-1 rounded border border-gray-200 hover:bg-gray-100 transition-colors">Next</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Admin Interactive Script -->
+    <script>
+        // Sidebar Toggle for Mobile
+        const sidebar = document.getElementById('sidebar');
+        const backdrop = document.getElementById('sidebarBackdrop');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('-translate-x-full');
+            backdrop.classList.toggle('hidden');
+        }
+
+        // Dummy Form Submission Handler
+        function handleNoticeSubmit(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+
+            // Show loading state
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Uploading...';
+            btn.classList.add('opacity-80', 'cursor-not-allowed');
+
+            // Simulate API Call (2 seconds)
+            setTimeout(() => {
+                alert("Success! Notice uploaded successfully.");
+                e.target.reset(); // Reset form
+                btn.innerHTML = originalText;
+                btn.classList.remove('opacity-80', 'cursor-not-allowed');
+            }, 1500);
+        }
+    </script>
+</body>
+
+</html>
