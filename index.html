@@ -25,7 +25,8 @@
                         'baf-blue': '#0a1e3f',
                         'baf-blue-light': '#1d3557',
                         'baf-gold': '#ffc107',
-                        'baf-red': '#e63946'
+                        'baf-red': '#e63946',
+                        'baf-green': '#2a9d8f'
                     },
                     fontFamily: {
                         'serif-title': ['Lora', 'serif'],
@@ -777,16 +778,16 @@
 
                 <!-- Right: Message Card -->
                 <div
-                    class="w-full md:w-2/3 lg:w-3/4 bg-white border border-gray-200 border-l-[6px] border-l-baf-blue rounded-xl p-6 md:p-8 shadow-sm flex flex-col justify-between relative">
+                    class="w-full md:w-2/3 lg:w-3/4 bg-white border border-gray-200 border-l-[6px] border-l-baf-green rounded-xl p-6 md:p-8 shadow-sm flex flex-col justify-between relative">
                     <div>
                         <!-- Quote Icon -->
-                        <div class="text-baf-blue/60 text-3xl md:text-4xl mb-3">
+                        <div class="text-baf-green/60 text-3xl md:text-4xl mb-3">
                             <i class="fa-solid fa-quote-left"></i>
                         </div>
 
                         <!-- Titles -->
                         <h2 class="text-xl md:text-2xl font-bold text-gray-900 font-poppins">Welcome Message</h2>
-                        <h3 class="text-base md:text-lg font-semibold text-baf-blue font-poppins mt-0.5 mb-5">Principal
+                        <h3 class="text-base md:text-lg font-semibold text-baf-green font-poppins mt-0.5 mb-5">Principal
                         </h3>
 
                         <!-- Message Body -->
@@ -851,6 +852,616 @@
         </div>
     </section>
     <!-- ================== END GB Chairman & Principal Message Section ================== -->
+
+    <!-- ================== HISTORY SECTION ================== -->
+    <section class="bg-white py-20 w-full overflow-hidden">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+
+                <!-- Left: Image Composition -->
+                <div class="w-full lg:w-1/2 relative">
+                    <!-- Background Accent Shape -->
+                    <div class="absolute -bottom-6 -left-6 w-2/3 h-2/3 bg-baf-gold/20 rounded-2xl z-0"></div>
+
+                    <!-- Main Image -->
+                    <div
+                        class="rounded-2xl overflow-hidden shadow-lg border-4 border-white relative z-10 bg-gray-100 group">
+                        <!-- Placeholder Image (আপনার কলেজের অরিজিনাল ছবি বসিয়ে নিবেন) -->
+                        <img src="assets/images/history_banner.jpeg" alt="Dania College Campus"
+                            class="w-full h-[350px] md:h-[450px] object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out">
+                    </div>
+
+                    <!-- Establishment Year Badge -->
+                    <div
+                        class="absolute -top-5 right-4 lg:-right-8 bg-baf-blue text-white w-24 h-24 md:w-32 md:h-32 rounded-full flex flex-col justify-center items-center shadow-xl z-20 border-4 border-white hover:scale-110 transition-transform duration-300">
+                        <span class="text-baf-gold font-bold text-2xl md:text-3xl font-poppins">1984</span>
+                        <span
+                            class="text-[9px] md:text-xs uppercase tracking-widest font-semibold mt-1">Established</span>
+                    </div>
+                </div>
+
+                <!-- Right: Text Content -->
+                <div class="w-full lg:w-1/2 relative z-10">
+                    <!-- Section Subtitle -->
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-12 h-1 bg-baf-gold rounded"></span>
+                        <h4 class="text-baf-blue font-semibold text-sm uppercase tracking-widest font-poppins">Our
+                            Heritage</h4>
+                    </div>
+
+                    <!-- Section Title -->
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 font-poppins mb-6 leading-tight">History of
+                        Dania College</h2>
+
+                    <!-- History Text (এখানে আপনার লিংকের টেক্সট বসাবেন) -->
+                    <div
+                        class="text-gray-600 text-sm md:text-[15px] leading-relaxed text-justify font-sans-nav space-y-4">
+                        <p>
+                            দনিয়া কলেজ ঢাকা মহানগরের যাত্রাবাড়ী থানার অন্তর্গত দনিয়া এলাকায় অবস্থিত একটি স্বনামধন্য
+                            শিক্ষা প্রতিষ্ঠান। এলাকার বিশিষ্ট ব্যক্তিবর্গ, শিক্ষানুরাগী ও সমাজসেবকদের অক্লান্ত পরিশ্রমে
+                            ১৯৮৪ সালে এই কলেজটি প্রতিষ্ঠিত হয়। প্রতিষ্ঠার পর থেকেই অত্র অঞ্চলের শিক্ষার্থীদের মাঝে
+                            শিক্ষার আলো ছড়িয়ে দিতে কলেজটি অগ্রণী ভূমিকা পালন করে আসছে।
+                        </p>
+                        <p>
+                            শুরুতে একটি ছোট পরিসরে এর যাত্রা শুরু হলেও, বর্তমানে এটি একটি সুবিশাল ক্যাম্পাস, আধুনিক
+                            বিজ্ঞানাগার, সমৃদ্ধ গ্রন্থাগার এবং ডিজিটাল সুবিধাসম্পন্ন শ্রেণিকক্ষ নিয়ে মাথা উঁচু করে
+                            দাঁড়িয়ে আছে। উচ্চ মাধ্যমিক, স্নাতক (পাস), স্নাতক (সম্মান) ও স্নাতকোত্তর পর্যায়ে মানসম্মত
+                            শিক্ষা প্রদানের মাধ্যমে দনিয়া কলেজ আজ হাজারো শিক্ষার্থীর স্বপ্ন পূরণের এক বিশ্বস্ত নাম।
+                        </p>
+                    </div>
+
+                    <!-- Read More Button (আপনার দেওয়া লিংক যুক্ত করা হয়েছে) -->
+                    <div class="mt-10">
+                        <a href="https://daniacollege.edu.bd/history.html" target="_blank"
+                            class="inline-flex items-center gap-2 bg-baf-blue hover:bg-baf-gold text-white hover:text-black font-bold text-sm px-7 py-3.5 rounded shadow-md hover:shadow-lg transition-all font-poppins uppercase tracking-wide">
+                            Read Full History <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ================== END HISTORY SECTION ================== -->
+
+    <!-- ================== PAST EVENTS SECTION ================== -->
+    <section class="bg-[#f4f6f9] py-20 w-full border-t border-gray-200">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+
+            <!-- Section Title -->
+            <div class="text-center mb-12">
+                <div class="flex items-center justify-center gap-3 mb-2">
+                    <span class="w-8 h-1 bg-baf-gold rounded"></span>
+                    <h4 class="text-baf-blue font-semibold text-sm uppercase tracking-widest font-poppins">Memories</h4>
+                    <span class="w-8 h-1 bg-baf-gold rounded"></span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 font-serif-title">Recent Events</h2>
+            </div>
+
+            <!-- Events Grid (4 Columns on Desktop) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Event Card 1 -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                    <!-- Image Area -->
+                    <div class="relative h-52 w-full">
+                        <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=600&q=80"
+                            alt="Annual Sports" class="w-full h-full object-cover">
+                        <!-- Yellow Badge -->
+                        <div
+                            class="absolute bottom-4 left-4 bg-[#ffc107] text-gray-900 font-bold text-[11px] px-3 py-1 rounded font-poppins uppercase tracking-wide shadow-sm">
+                            SPORTS
+                        </div>
+                    </div>
+                    <!-- Content Area -->
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="text-lg font-bold text-baf-blue font-serif-title mb-2">Annual Sports 2025</h3>
+                        <p class="text-gray-500 text-[13px] leading-relaxed font-sans-nav mb-4 flex-1">
+                            Grand annual sports competition featuring track and field, indoor games, and an extravagant
+                            prize giving ceremony.
+                        </p>
+                        <!-- Footer Info -->
+                        <div
+                            class="flex items-center gap-4 text-[11px] text-gray-500 font-medium font-poppins pt-4 border-t border-gray-100">
+                            <span class="flex items-center gap-1.5"><i
+                                    class="fa-regular fa-clock text-[#ffc107] text-xs"></i> 9:00 AM - 4:30 PM</span>
+                            <span class="flex items-center gap-1.5"><i
+                                    class="fa-solid fa-user-group text-[#ffc107] text-xs"></i> 2,450 students</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                    <div class="relative h-52 w-full">
+                        <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=600&q=80"
+                            alt="Cultural Fest" class="w-full h-full object-cover">
+                        <div
+                            class="absolute bottom-4 left-4 bg-[#ffc107] text-gray-900 font-bold text-[11px] px-3 py-1 rounded font-poppins uppercase tracking-wide shadow-sm">
+                            CULTURAL
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="text-lg font-bold text-baf-blue font-serif-title mb-2">Spring Festival Celebration
+                        </h3>
+                        <p class="text-gray-500 text-[13px] leading-relaxed font-sans-nav mb-4 flex-1">
+                            A vibrant celebration of the arrival of spring with music, traditional dance, and colorful
+                            cultural performances by students.
+                        </p>
+                        <div
+                            class="flex items-center gap-4 text-[11px] text-gray-500 font-medium font-poppins pt-4 border-t border-gray-100">
+                            <span class="flex items-center gap-1.5"><i
+                                    class="fa-regular fa-clock text-[#ffc107] text-xs"></i> 10:00 AM - 2:00 PM</span>
+                            <span class="flex items-center gap-1.5"><i
+                                    class="fa-solid fa-user-group text-[#ffc107] text-xs"></i> 1,800 students</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 3 -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                    <div class="relative h-52 w-full">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80"
+                            alt="Science Fair" class="w-full h-full object-cover">
+                        <div
+                            class="absolute bottom-4 left-4 bg-[#ffc107] text-gray-900 font-bold text-[11px] px-3 py-1 rounded font-poppins uppercase tracking-wide shadow-sm">
+                            SCIENCE
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="text-lg font-bold text-baf-blue font-serif-title mb-2">National Science Fair</h3>
+                        <p class="text-gray-500 text-[13px] leading-relaxed font-sans-nav mb-4 flex-1">
+                            Showcasing innovative projects, robotics, and outstanding scientific models designed by our
+                            brilliant young minds.
+                        </p>
+                        <div
+                            class="flex items-center gap-4 text-[11px] text-gray-500 font-medium font-poppins pt-4 border-t border-gray-100">
+                            <span class="flex items-center gap-1.5"><i
+                                    class="fa-regular fa-clock text-[#ffc107] text-xs"></i> 9:30 AM - 3:00 PM</span>
+                            <span class="flex items-center gap-1.5"><i
+                                    class="fa-solid fa-user-group text-[#ffc107] text-xs"></i> 3,200 visitors</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 4 -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                    <div class="relative h-52 w-full">
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80"
+                            alt="Seminar" class="w-full h-full object-cover">
+                        <div
+                            class="absolute bottom-4 left-4 bg-[#ffc107] text-gray-900 font-bold text-[11px] px-3 py-1 rounded font-poppins uppercase tracking-wide shadow-sm">
+                            SEMINAR
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="text-lg font-bold text-baf-blue font-serif-title mb-2">Career Guidance 2025</h3>
+                        <p class="text-gray-500 text-[13px] leading-relaxed font-sans-nav mb-4 flex-1">
+                            Expert sessions on higher education opportunities, skill development, and career planning
+                            for outgoing HSC candidates.
+                        </p>
+                        <div
+                            class="flex items-center gap-4 text-[11px] text-gray-500 font-medium font-poppins pt-4 border-t border-gray-100">
+                            <span class="flex items-center gap-1.5"><i
+                                    class="fa-regular fa-clock text-[#ffc107] text-xs"></i> 11:00 AM - 1:30 PM</span>
+                            <span class="flex items-center gap-1.5"><i
+                                    class="fa-solid fa-user-group text-[#ffc107] text-xs"></i> 850 students</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- View All Button -->
+            <div class="mt-12 text-center">
+                <a href="#"
+                    class="inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-baf-blue text-baf-blue hover:bg-baf-blue hover:text-white transition-colors font-bold text-sm font-poppins uppercase tracking-wide">
+                    View All Events <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+    <!-- ================== END PAST EVENTS SECTION ================== -->
+
+    <!-- ================== ACADEMIC FEATURES SECTION ================== -->
+    <section class="bg-white py-20 w-full">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-baf-blue font-serif-title mb-4">Our Academic Features
+                </h2>
+                <p class="text-gray-500 font-sans-nav text-sm md:text-base max-w-2xl mx-auto">
+                    Discover what makes our institution a top choice for quality education
+                </p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Feature 1: Quality Education -->
+                <div
+                    class="bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-sm hover:shadow-xl hover:-translate-y-2 hover:border-baf-gold/50 transition-all duration-300 group cursor-pointer">
+                    <!-- Icon Box -->
+                    <div
+                        class="w-20 h-20 mx-auto bg-baf-blue text-white rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-baf-gold group-hover:text-black transition-colors duration-300 group-hover:scale-105 shadow-md">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <!-- Text Content -->
+                    <h3 class="text-xl font-bold text-baf-blue font-serif-title mb-3">Quality Education</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed font-sans-nav">
+                        Comprehensive curriculum designed to meet international standards with focus on conceptual
+                        learning.
+                    </p>
+                </div>
+
+                <!-- Feature 2: Expert Faculty -->
+                <div
+                    class="bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-sm hover:shadow-xl hover:-translate-y-2 hover:border-baf-gold/50 transition-all duration-300 group cursor-pointer">
+                    <div
+                        class="w-20 h-20 mx-auto bg-baf-blue text-white rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-baf-gold group-hover:text-black transition-colors duration-300 group-hover:scale-105 shadow-md">
+                        <i class="fa-solid fa-user-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-baf-blue font-serif-title mb-3">Expert Faculty</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed font-sans-nav">
+                        Highly qualified and experienced teachers committed to nurturing every student's potential.
+                    </p>
+                </div>
+
+                <!-- Feature 3: Modern Facilities -->
+                <div
+                    class="bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-sm hover:shadow-xl hover:-translate-y-2 hover:border-baf-gold/50 transition-all duration-300 group cursor-pointer">
+                    <div
+                        class="w-20 h-20 mx-auto bg-baf-blue text-white rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-baf-gold group-hover:text-black transition-colors duration-300 group-hover:scale-105 shadow-md">
+                        <i class="fa-solid fa-laptop"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-baf-blue font-serif-title mb-3">Modern Facilities</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed font-sans-nav">
+                        State-of-the-art laboratories, libraries, smart classrooms, and digital learning resources.
+                    </p>
+                </div>
+
+                <!-- Feature 4: Sports & Co-curricular -->
+                <div
+                    class="bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-sm hover:shadow-xl hover:-translate-y-2 hover:border-baf-gold/50 transition-all duration-300 group cursor-pointer">
+                    <div
+                        class="w-20 h-20 mx-auto bg-baf-blue text-white rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-baf-gold group-hover:text-black transition-colors duration-300 group-hover:scale-105 shadow-md">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-baf-blue font-serif-title mb-3">Sports & Co-curricular</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed font-sans-nav">
+                        Strong emphasis on physical education, sports, and a wide variety of co-curricular activities.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ================== END ACADEMIC FEATURES ================== -->
+
+    <!-- ================== PHOTO GALLERY SECTION ================== -->
+    <section class="bg-gray-50 py-20 w-full border-t border-gray-200">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+                <div>
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="w-8 h-1 bg-baf-gold rounded"></span>
+                        <h4 class="text-baf-blue font-semibold text-sm uppercase tracking-widest font-poppins">Campus
+                            Life</h4>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 font-serif-title">Photo Gallery</h2>
+                </div>
+                <!-- View All Button (Desktop) -->
+                <div class="hidden md:block">
+                    <a href="#"
+                        class="inline-flex items-center gap-2 px-6 py-2.5 rounded border border-baf-blue text-baf-blue hover:bg-baf-blue hover:text-white transition-colors font-bold text-sm font-poppins uppercase tracking-wide">
+                        View All Photos <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+
+                <!-- Gallery Item 1 -->
+                <div class="relative overflow-hidden rounded-xl h-64 md:h-72 group cursor-pointer shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80"
+                        alt="Campus Building"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                    <!-- Hover Overlay -->
+                    <div
+                        class="absolute inset-0 bg-baf-blue/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white">
+                        <div
+                            class="w-12 h-12 rounded-full bg-baf-gold text-black flex items-center justify-center text-xl mb-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </div>
+                        <h3
+                            class="font-bold font-poppins text-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                            Campus Building</h3>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="relative overflow-hidden rounded-xl h-64 md:h-72 group cursor-pointer shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80"
+                        alt="Science Laboratory"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                    <div
+                        class="absolute inset-0 bg-baf-blue/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white">
+                        <div
+                            class="w-12 h-12 rounded-full bg-baf-gold text-black flex items-center justify-center text-xl mb-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </div>
+                        <h3
+                            class="font-bold font-poppins text-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                            Science Laboratory</h3>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="relative overflow-hidden rounded-xl h-64 md:h-72 group cursor-pointer shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80"
+                        alt="College Library"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                    <div
+                        class="absolute inset-0 bg-baf-blue/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white">
+                        <div
+                            class="w-12 h-12 rounded-full bg-baf-gold text-black flex items-center justify-center text-xl mb-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </div>
+                        <h3
+                            class="font-bold font-poppins text-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                            College Library</h3>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="relative overflow-hidden rounded-xl h-64 md:h-72 group cursor-pointer shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80"
+                        alt="Graduation Ceremony"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                    <div
+                        class="absolute inset-0 bg-baf-blue/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white">
+                        <div
+                            class="w-12 h-12 rounded-full bg-baf-gold text-black flex items-center justify-center text-xl mb-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </div>
+                        <h3
+                            class="font-bold font-poppins text-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                            Graduation Ceremony</h3>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="relative overflow-hidden rounded-xl h-64 md:h-72 group cursor-pointer shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80"
+                        alt="Sports Tournament"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                    <div
+                        class="absolute inset-0 bg-baf-blue/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white">
+                        <div
+                            class="w-12 h-12 rounded-full bg-baf-gold text-black flex items-center justify-center text-xl mb-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </div>
+                        <h3
+                            class="font-bold font-poppins text-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                            Sports Tournament</h3>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="relative overflow-hidden rounded-xl h-64 md:h-72 group cursor-pointer shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=800&q=80"
+                        alt="Cultural Events"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                    <div
+                        class="absolute inset-0 bg-baf-blue/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white">
+                        <div
+                            class="w-12 h-12 rounded-full bg-baf-gold text-black flex items-center justify-center text-xl mb-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </div>
+                        <h3
+                            class="font-bold font-poppins text-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                            Cultural Events</h3>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- View All Button (Mobile Only) -->
+            <div class="mt-8 text-center md:hidden">
+                <a href="#"
+                    class="inline-flex items-center gap-2 px-6 py-2.5 rounded border border-baf-blue text-baf-blue hover:bg-baf-blue hover:text-white transition-colors font-bold text-sm font-poppins uppercase tracking-wide">
+                    View All Photos <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+    <!-- ================== END PHOTO GALLERY ================== -->
+
+    <!-- ================== FOOTER SECTION ================== -->
+    <footer class="bg-[#0d1b2a] text-white pt-16 pb-6 w-full border-t-4 border-baf-gold font-sans-nav">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+
+            <!-- Main Footer Content (4 Columns) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+                <!-- Column 1: About College -->
+                <div class="flex flex-col">
+                    <!-- Logo & Title -->
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-12 h-12 bg-white rounded-full p-1 flex items-center justify-center shrink-0">
+                            <!-- Replace with real logo -->
+                            <img src="assets/images/Dania_College_Logo.png" alt="Logo"
+                                class="w-full h-full object-contain rounded-full">
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold font-serif-title tracking-widest uppercase text-white">Dania
+                                College</h2>
+                            <p class="text-[10px] text-baf-gold font-poppins uppercase tracking-wider font-semibold">
+                                EIIN: 107909</p>
+                        </div>
+                    </div>
+                    <!-- Short Description -->
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 text-justify">
+                        প্রতিষ্ঠালগ্ন (১৯৮৪) থেকে দনিয়া কলেজ মানসম্মত শিক্ষা প্রদান এবং শিক্ষার্থীদের নৈতিক ও
+                        বুদ্ধিবৃত্তিক বিকাশে নিরলসভাবে কাজ করে যাচ্ছে। আমরা একটি সুন্দর ভবিষ্যতের জন্য প্রতিশ্রুতিবদ্ধ।
+                    </p>
+                    <!-- Social Icons -->
+                    <div class="flex gap-3">
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:bg-[#1877f2] hover:text-white transition-colors duration-300 shadow-sm"
+                            title="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:bg-[#ff0000] hover:text-white transition-colors duration-300 shadow-sm"
+                            title="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:bg-blue-400 hover:text-white transition-colors duration-300 shadow-sm"
+                            title="Twitter">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:bg-[#0a66c2] hover:text-white transition-colors duration-300 shadow-sm"
+                            title="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold text-white font-poppins mb-5 flex items-center gap-2">
+                        <span class="w-2 h-2 bg-baf-gold rounded-full"></span> Quick Links
+                    </h3>
+                    <ul class="flex flex-col gap-3 text-sm text-gray-400 font-medium">
+                        <li>
+                            <a href="#"
+                                class="hover:text-baf-gold hover:pl-2 transition-all duration-300 inline-block"><i
+                                    class="fa-solid fa-angle-right text-xs mr-2 opacity-50"></i> About Us</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-baf-gold hover:pl-2 transition-all duration-300 inline-block"><i
+                                    class="fa-solid fa-angle-right text-xs mr-2 opacity-50"></i> Governing Body</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-baf-gold hover:pl-2 transition-all duration-300 inline-block"><i
+                                    class="fa-solid fa-angle-right text-xs mr-2 opacity-50"></i> Teacher's Info</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-baf-gold hover:pl-2 transition-all duration-300 inline-block"><i
+                                    class="fa-solid fa-angle-right text-xs mr-2 opacity-50"></i> Latest Notices</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-baf-gold hover:pl-2 transition-all duration-300 inline-block"><i
+                                    class="fa-solid fa-angle-right text-xs mr-2 opacity-50"></i> Photo Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Academic & Admission -->
+                <div>
+                    <h3 class="text-lg font-bold text-white font-poppins mb-5 flex items-center gap-2">
+                        <span class="w-2 h-2 bg-baf-gold rounded-full"></span> Academics
+                    </h3>
+                    <ul class="flex flex-col gap-3 text-sm text-gray-400 font-medium">
+                        <li>
+                            <a href="#"
+                                class="hover:text-baf-gold hover:pl-2 transition-all duration-300 inline-block"><i
+                                    class="fa-solid fa-angle-right text-xs mr-2 opacity-50"></i> Online Admission</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-baf-gold hover:pl-2 transition-all duration-300 inline-block"><i
+                                    class="fa-solid fa-angle-right text-xs mr-2 opacity-50"></i> Academic Calendar</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-baf-gold hover:pl-2 transition-all duration-300 inline-block"><i
+                                    class="fa-solid fa-angle-right text-xs mr-2 opacity-50"></i> Class Routine</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-baf-gold hover:pl-2 transition-all duration-300 inline-block"><i
+                                    class="fa-solid fa-angle-right text-xs mr-2 opacity-50"></i> Result Portal</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-baf-gold hover:pl-2 transition-all duration-300 inline-block"><i
+                                    class="fa-solid fa-angle-right text-xs mr-2 opacity-50"></i> Clubs &
+                                Co-curricular</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Info -->
+                <div>
+                    <h3 class="text-lg font-bold text-white font-poppins mb-5 flex items-center gap-2">
+                        <span class="w-2 h-2 bg-baf-gold rounded-full"></span> Contact Us
+                    </h3>
+                    <ul class="flex flex-col gap-4 text-sm text-gray-400">
+                        <!-- Location -->
+                        <li class="flex items-start gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-baf-gold shrink-0 mt-0.5">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <span class="leading-relaxed">Dania College,<br> Jatrabari, Dhaka - 1236,<br>
+                                Bangladesh.</span>
+                        </li>
+                        <!-- Phone -->
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-baf-gold shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <a href="tel:+88028713811" class="hover:text-baf-gold transition-colors">+88 02 8713811</a>
+                        </li>
+                        <!-- Email -->
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-baf-gold shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <a href="mailto:info@daniacollege.edu.bd"
+                                class="hover:text-baf-gold transition-colors">info@daniacollege.edu.bd</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Footer Strip -->
+            <div
+                class="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-medium">
+                <p>&copy; 2026 Dania College. All Rights Reserved.</p>
+                <div class="flex items-center gap-4">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <span class="w-1 h-1 bg-gray-600 rounded-full"></span>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+                </div>
+                <p>Designed & Developed by <a href="https://minhajsiam.ami.bd/" target="_blank"
+                        class="text-baf-gold hover:underline">Minhajur Rahman Siam</a></p>
+            </div>
+
+        </div>
+    </footer>
+    <!-- ================== END FOOTER SECTION ================== -->
 
 </body>
 
