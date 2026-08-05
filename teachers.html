@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/images/Dania_College_Logo.png" type="image/png">
+    <title>Dania College</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'baf-blue': '#0a1e3f',
+                        'baf-blue-light': '#1d3557',
+                        'baf-gold': '#ffc107',
+                        'baf-red': '#e63946',
+                        'baf-green': '#2a9d8f'
+                    },
+                    fontFamily: {
+                        'serif-title': ['Lora', 'serif'],
+                        'sans-nav': ['Open Sans', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* LATEST NOTICE এর ডানদিকের বাঁকানো শেপের জন্য (এটি মিসিং ছিল) */
+        .slanted-edge {
+            clip-path: polygon(0 0, 92% 0, 100% 100%, 0 100%);
+        }
+
+        /* Dropdown transition */
+        .dropdown-menu {
+            transition: all 0.3s ease;
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .group:hover .dropdown-menu {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        marquee span {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans-nav m-0 p-0">
+    <!-- ================== Topbar Start ================== -->
+    <div
+        class="w-full bg-[#0d1b2a] text-white h-11 flex items-center text-[13px] overflow-hidden border-b-2 border-baf-gold relative z-50">
+        <div class="flex items-center gap-4 md:gap-6 px-4 h-full shrink-0 bg-[#0d1b2a] z-20">
+            <a href="tel:+88028713811" class="flex items-center gap-2 hover:text-gray-300 transition-colors">
+                <i class="fa-solid fa-phone text-baf-gold text-[11px]"></i>
+                <span class="font-semibold text-[11px] sm:text-[13px]">+880 15542 43497</span>
+            </a>
+            <a href="mailto:info@daniacollege.edu.bd"
+                class="flex items-center gap-2 hover:text-gray-300 transition-colors hidden sm:flex">
+                <i class="fa-solid fa-envelope text-baf-gold"></i>
+                <span class="font-semibold">info@daniacollege.edu.bd</span>
+            </a>
+        </div>
+
+        <div class="flex-1 h-full flex items-center bg-[#172542] relative">
+            <div
+                class="slanted-edge bg-baf-gold text-black h-full flex items-center px-4 md:px-5 font-bold tracking-wide z-10 shrink-0 w-28 md:w-44 text-[10px] md:text-sm">
+                LATEST NOTICE
+            </div>
+            <div class="flex-1 overflow-hidden h-full flex items-center -ml-4">
+                <marquee behavior="scroll" direction="left" class="flex items-center font-medium text-gray-200"
+                    scrollamount="5">
+                    <span class="mx-4">Subject-wise list of selected candidates for class demonstration/ practical
+                        test</span>
+                    <span class="inline-block w-2 h-2 rounded-full bg-baf-gold mx-2"></span>
+                    <span class="bg-red-600 text-white text-[10px] px-1.5 py-0.5 rounded font-bold mx-2">NEW</span>
+                    <span class="mx-4">Schedule of Class Demo-2026</span>
+                </marquee>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-3 px-2 md:px-4 shrink-0 bg-[#0d1b2a] z-20 h-full">
+            <div class="flex gap-2 hidden lg:flex text-sm">
+                <a href="#"
+                    class="w-7 h-7 rounded-full bg-[#172542] flex items-center justify-center hover:bg-red-600 transition text-white">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="#"
+                    class="w-7 h-7 rounded-full bg-[#172542] flex items-center justify-center hover:bg-blue-600 transition text-white">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+            </div>
+            <a href="https://daniacollege.eshiksabd.com/" target="_blank"
+                class="bg-baf-gold hover:bg-yellow-500 text-black font-bold px-3 py-1.5 md:px-5 rounded-full flex items-center gap-1.5 transition-colors text-[10px] md:text-xs shrink-0">
+                <i class="fa-solid fa-right-to-bracket hidden sm:inline"></i>
+                <span>Login EMS</span>
+            </a>
+        </div>
+    </div>
+    <!-- ================== Topbar End ================== -->
+
+    <!-- ================== Header Start ================== -->
+    <!-- মোবাইলের জন্য Header কে z-50 করা হয়েছে যাতে মেনু এর নিচ থেকে নামতে পারে -->
+    <header
+        class="bg-white h-[90px] md:h-[120px] px-4 md:px-16 flex justify-between items-center relative max-w-[1400px] mx-auto w-full z-50">
+
+        <div
+            class="w-[65px] h-[65px] md:w-[90px] md:h-[90px] rounded-full border border-gray-200 p-1 flex items-center justify-center z-10 bg-white shadow-sm">
+            <img src="assets/images/Dania_College_Logo.png" alt="Dania College Logo"
+                class="w-full h-full rounded-full object-contain">
+        </div>
+
+        <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none px-16">
+            <h1
+                class="text-xl sm:text-2xl md:text-[36px] font-bold text-baf-blue font-serif-title tracking-[0.05em] md:tracking-[0.1em] uppercase mb-0.5 md:mb-1 drop-shadow-sm text-center">
+                DANIA COLLEGE
+            </h1>
+            <div
+                class="flex items-center justify-center text-gray-500 text-[10px] sm:text-xs md:text-[15px] font-medium font-poppins text-center">
+                <span>Jatrabari, Dhaka 1236 <span class="hidden sm:inline">|</span><br class="sm:hidden">
+                    EIIN-107909</span>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Toggle Button (Right Side) - স্ক্রিনশটের মত কোনো ব্যাকগ্রাউন্ড কালার ছাড়াই -->
+        <div class="block lg:hidden z-20">
+            <button id="mobile-menu-toggle"
+                class="text-baf-blue hover:text-baf-gold flex items-center justify-center text-[28px] focus:outline-none transition-colors duration-300">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <div class="w-[90px] hidden lg:block z-10"></div>
+    </header>
+    <!-- ================== Header End ================== -->
+
+    <!-- ================== Navbar Start ================== -->
+    <nav id="navbar" class="bg-baf-blue text-white w-full z-40 transition-all duration-300 shadow-md relative">
+
+        <!-- Desktop Menu -->
+        <div class="max-w-[1400px] mx-auto hidden lg:flex justify-center">
+            <ul class="flex items-center text-[15px] font-semibold font-poppins">
+                <li><a href="index.html" class="block px-6 py-4 hover:bg-baf-blue-light transition-colors">Home</a></li>
+                <li class="relative group">
+                    <a href="#"
+                        class="flex items-center gap-1.5 px-6 py-4 hover:bg-baf-blue-light transition-colors cursor-pointer">
+                        About <i class="fa-solid fa-chevron-down text-[10px] mt-0.5"></i>
+                    </a>
+                    <ul
+                        class="absolute left-0 top-full bg-white text-gray-800 w-48 shadow-lg border-t-2 border-baf-gold opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <li><a href="#"
+                                class="block px-4 py-3 hover:bg-gray-100 hover:text-baf-blue border-b border-gray-100">Our
+                                History</a></li>
+                        <li><a href="#"
+                                class="block px-4 py-3 hover:bg-gray-100 hover:text-baf-blue border-b border-gray-100">Principal's
+                                Message</a></li>
+                        <li><a href="#" class="block px-4 py-3 hover:bg-gray-100 hover:text-baf-blue">Governing Body</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="relative group">
+                    <a href="#"
+                        class="flex items-center gap-1.5 px-6 py-4 hover:bg-baf-blue-light transition-colors cursor-pointer">
+                        Academic <i class="fa-solid fa-chevron-down text-[10px] mt-0.5"></i>
+                    </a>
+                    <ul
+                        class="absolute left-0 top-full bg-white text-gray-800 w-48 shadow-lg border-t-2 border-baf-gold opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <li><a href="#"
+                                class="block px-4 py-3 hover:bg-gray-100 hover:text-baf-blue border-b border-gray-100">Curriculum</a>
+                        </li>
+                        <li><a href="#" class="block px-4 py-3 hover:bg-gray-100 hover:text-baf-blue">Class Routine</a>
+                        </li>
+                        <li><a href="#" class="block px-4 py-3 hover:bg-gray-100 hover:text-baf-blue">Teacher's
+                                Panel</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="relative group">
+                    <a href="#"
+                        class="flex items-center gap-1.5 px-6 py-4 hover:bg-baf-blue-light transition-colors cursor-pointer">
+                        Student Activities <i class="fa-solid fa-chevron-down text-[10px] mt-0.5"></i>
+                    </a>
+                    <ul
+                        class="absolute left-0 top-full bg-white text-gray-800 w-48 shadow-lg border-t-2 border-baf-gold opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <li><a href="#"
+                                class="block px-4 py-3 hover:bg-gray-100 hover:text-baf-blue border-b border-gray-100">Clubs</a>
+                        </li>
+                        <li><a href="#" class="block px-4 py-3 hover:bg-gray-100 hover:text-baf-blue">Sports</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="block px-6 py-4 hover:bg-baf-blue-light transition-colors">News & Media</a></li>
+                <li><a href="#" class="block px-6 py-4 hover:bg-baf-blue-light transition-colors">Alumni</a></li>
+                <li>
+                    <a href="#" class="flex items-center gap-2 px-6 py-4 hover:bg-baf-blue-light transition-colors">
+                        Notices <span
+                            class="bg-[#e63946] text-white text-[9px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide animate-pulse">New</span>
+                    </a>
+                </li>
+                <li><a href="#" class="block px-6 py-4 hover:bg-baf-blue-light transition-colors">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- ================== Huba-Hub Mobile Dropdown Menu ================== -->
+        <div id="mobile-menu"
+            class="hidden lg:hidden absolute top-0 left-0 w-full bg-white shadow-2xl border-t border-gray-200 flex-col overflow-y-auto"
+            style="max-height: calc(100vh - 90px);">
+
+            <ul class="flex flex-col w-full text-[15px] font-bold font-poppins text-gray-900">
+
+                <!-- Active Home Item -->
+                <li class="border-b border-gray-200 bg-[#f8fafc] border-l-[4px] border-baf-gold">
+                    <a href="#" class="flex items-center gap-3 px-6 py-4 text-baf-blue">
+                        <i class="fa-solid fa-house text-baf-gold"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+
+                <!-- About Accordion -->
+                <li class="border-b border-gray-200">
+                    <button
+                        class="mobile-dropdown-btn w-full flex justify-between items-center px-6 py-4 hover:bg-gray-50 transition-colors text-left">
+                        <span>About</span>
+                        <i class="fa-solid fa-caret-down text-gray-600 transition-transform duration-200 text-sm"></i>
+                    </button>
+                    <ul class="mobile-dropdown-sub hidden bg-gray-50 flex-col">
+                        <li class="border-t border-gray-200"><a href="#"
+                                class="block px-8 py-3.5 text-[14px] font-semibold text-gray-700 hover:text-baf-blue">Our
+                                History</a></li>
+                        <li class="border-t border-gray-200"><a href="#"
+                                class="block px-8 py-3.5 text-[14px] font-semibold text-gray-700 hover:text-baf-blue">Principal's
+                                Message</a></li>
+                        <li class="border-t border-gray-200"><a href="#"
+                                class="block px-8 py-3.5 text-[14px] font-semibold text-gray-700 hover:text-baf-blue">Governing
+                                Body</a></li>
+                    </ul>
+                </li>
+
+                <!-- Academic Accordion -->
+                <li class="border-b border-gray-200">
+                    <button
+                        class="mobile-dropdown-btn w-full flex justify-between items-center px-6 py-4 hover:bg-gray-50 transition-colors text-left">
+                        <span>Academic</span>
+                        <i class="fa-solid fa-caret-down text-gray-600 transition-transform duration-200 text-sm"></i>
+                    </button>
+                    <ul class="mobile-dropdown-sub hidden bg-gray-50 flex-col">
+                        <li class="border-t border-gray-200"><a href="#"
+                                class="block px-8 py-3.5 text-[14px] font-semibold text-gray-700 hover:text-baf-blue">Curriculum</a>
+                        </li>
+                        <li class="border-t border-gray-200"><a href="#"
+                                class="block px-8 py-3.5 text-[14px] font-semibold text-gray-700 hover:text-baf-blue">Class
+                                Routine</a></li>
+                        <li class="border-t border-gray-200"><a href="#"
+                                class="block px-8 py-3.5 text-[14px] font-semibold text-gray-700 hover:text-baf-blue">Teacher's
+                                Panel</a></li>
+                    </ul>
+                </li>
+
+                <!-- Student Activities Accordion -->
+                <li class="border-b border-gray-200">
+                    <button
+                        class="mobile-dropdown-btn w-full flex justify-between items-center px-6 py-4 hover:bg-gray-50 transition-colors text-left">
+                        <span>Student Activities</span>
+                        <i class="fa-solid fa-caret-down text-gray-600 transition-transform duration-200 text-sm"></i>
+                    </button>
+                    <ul class="mobile-dropdown-sub hidden bg-gray-50 flex-col">
+                        <li class="border-t border-gray-200"><a href="#"
+                                class="block px-8 py-3.5 text-[14px] font-semibold text-gray-700 hover:text-baf-blue">Clubs</a>
+                        </li>
+                        <li class="border-t border-gray-200"><a href="#"
+                                class="block px-8 py-3.5 text-[14px] font-semibold text-gray-700 hover:text-baf-blue">Sports</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- News & Media Accordion -->
+                <li class="border-b border-gray-200">
+                    <button
+                        class="mobile-dropdown-btn w-full flex justify-between items-center px-6 py-4 hover:bg-gray-50 transition-colors text-left">
+                        <span>News & Media</span>
+                        <i class="fa-solid fa-caret-down text-gray-600 transition-transform duration-200 text-sm"></i>
+                    </button>
+                    <ul class="mobile-dropdown-sub hidden bg-gray-50 flex-col">
+                        <li class="border-t border-gray-200"><a href="#"
+                                class="block px-8 py-3.5 text-[14px] font-semibold text-gray-700 hover:text-baf-blue">Latest
+                                News</a></li>
+                        <li class="border-t border-gray-200"><a href="#"
+                                class="block px-8 py-3.5 text-[14px] font-semibold text-gray-700 hover:text-baf-blue">Events</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- Alumni Accordion -->
+                <li class="border-b border-gray-200">
+                    <button
+                        class="mobile-dropdown-btn w-full flex justify-between items-center px-6 py-4 hover:bg-gray-50 transition-colors text-left">
+                        <span>Alumni</span>
+                        <i class="fa-solid fa-caret-down text-gray-600 transition-transform duration-200 text-sm"></i>
+                    </button>
+                </li>
+
+                <!-- Notices (with NEW Badge) -->
+                <li class="border-b border-gray-200">
+                    <a href="#" class="flex items-center gap-3 px-6 py-4 hover:bg-gray-50 transition-colors">
+                        <span>Notices</span>
+                        <!-- <span
+                            class="bg-[#e63946] text-white text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider">New</span> -->
+                    </a>
+                </li>
+
+                <!-- Contact -->
+                <li class="border-b border-gray-200">
+                    <a href="#" class="block px-6 py-4 hover:bg-gray-50 transition-colors">Contact</a>
+                </li>
+            </ul>
+
+            <!-- Mobile Menu Footer Section -->
+            <div class="bg-[#f8fafc] flex flex-col items-center py-10 gap-6">
+                <!-- Login Link -->
+                <a href="#"
+                    class="flex items-center gap-2 text-baf-blue font-semibold font-poppins text-[15px] hover:text-baf-gold transition-colors">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i> Login EMS to Portal
+                </a>
+
+                <!-- Social Icons -->
+                <div class="flex items-center gap-3">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-[#0d1b2a] flex items-center justify-center text-white text-lg hover:bg-baf-gold transition-colors shadow-sm"><i
+                            class="fa-brands fa-youtube"></i></a>
+                    <!-- <a href="#"
+                        class="w-10 h-10 rounded-full bg-[#0d1b2a] flex items-center justify-center text-white text-lg hover:bg-baf-gold transition-colors shadow-sm"><i
+                            class="fa-brands fa-kickstarter-k"></i></a> -->
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-[#0d1b2a] flex items-center justify-center text-white text-lg hover:bg-baf-gold transition-colors shadow-sm"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                </div>
+
+                <!-- Email Info -->
+                <a href="mailto:info@daniacollege.edu.bd"
+                    class="flex items-center gap-2 text-gray-500 font-semibold text-sm hover:text-baf-blue transition-colors">
+                    <i class="fa-solid fa-envelope text-baf-gold"></i> info@daniacollege.edu.bd
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Interaction Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // --- Sticky Navbar Logic (Desktop Only) ---
+            const navbar = document.getElementById('navbar');
+            const sticky = navbar.offsetTop;
+
+            window.onscroll = function () {
+                if (window.pageYOffset >= sticky) {
+                    if (window.innerWidth >= 1024) {
+                        navbar.classList.add("fixed", "top-0", "shadow-xl");
+                    }
+                } else {
+                    navbar.classList.remove("fixed", "top-0", "shadow-xl");
+                }
+            };
+
+            // --- Mobile Dropdown Menu Toggle ---
+            const toggleBtn = document.getElementById('mobile-menu-toggle');
+            const menuIcon = document.getElementById('menu-icon');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            toggleBtn.addEventListener('click', function () {
+                if (mobileMenu.classList.contains('hidden')) {
+                    // Open the full-width menu
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('flex');
+
+                    // Change Hamburger to 'X' (Close Icon)
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+
+                    // Optional: stop body scroll when menu is open
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    // Close the menu
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+
+                    // Revert 'X' back to Hamburger
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+
+                    // Restore body scroll
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // --- Mobile Accordion Sub-menu Logic ---
+            const dropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
+
+            dropdownBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const subMenu = this.nextElementSibling;
+                    const chevronIcon = this.querySelector('i');
+
+                    if (subMenu.classList.contains('hidden')) {
+                        // Open sub-menu
+                        subMenu.classList.remove('hidden');
+                        subMenu.classList.add('flex');
+                        chevronIcon.style.transform = 'rotate(180deg)';
+                    } else {
+                        // Close sub-menu
+                        subMenu.classList.add('hidden');
+                        subMenu.classList.remove('flex');
+                        chevronIcon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+
+        });
+    </script>
+    <!-- ================== Navbar End ================== -->
+
+    <!-- ================== TEACHER'S PANEL SECTION ================== -->
+    <style>
+        /* Mobile Responsive Table CSS (Turns Rows into Cards) */
+        @media (max-width: 767px) {
+            .table-row-card td {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 12px 16px;
+                border-bottom: 1px solid #f3f4f6;
+            }
+
+            .table-row-card td::before {
+                content: attr(data-label);
+                font-size: 12px;
+                font-weight: bold;
+                color: #9ca3af;
+                text-transform: uppercase;
+            }
+
+            .table-row-card {
+                display: block;
+                margin-bottom: 16px;
+                background: #fff;
+                border-radius: 12px;
+                border: 1px solid #e5e7eb;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            }
+        }
+    </style>
+
+    <section class="bg-[#f4f7fe] py-16 w-full min-h-screen font-sans-nav">
+        <div class="max-w-[1200px] mx-auto px-4 md:px-8">
+
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <div class="flex items-center justify-center gap-3 mb-3">
+                    <span class="w-8 h-1 bg-baf-gold rounded"></span>
+                    <h4 class="text-baf-blue font-bold text-sm uppercase tracking-widest font-poppins">Faculty Members
+                    </h4>
+                    <span class="w-8 h-1 bg-baf-gold rounded"></span>
+                </div>
+                <h2 class="text-3xl md:text-[40px] font-bold text-gray-900 font-serif-title mb-4">Our Honorable Teachers
+                </h2>
+                <p class="text-gray-500 text-sm md:text-base max-w-2xl mx-auto font-medium">
+                    Meet our highly qualified and dedicated faculty members who are committed to nurturing the future
+                    leaders.
+                </p>
+            </div>
+
+            <!-- Smart Search Bar -->
+            <div class="mb-10 max-w-2xl mx-auto relative group">
+                <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+                    <i
+                        class="fa-solid fa-magnifying-glass text-gray-400 group-focus-within:text-baf-blue transition-colors"></i>
+                </div>
+                <input type="text" id="teacherSearch" onkeyup="filterTeachers()"
+                    placeholder="Search by name, department or designation..."
+                    class="w-full pl-12 pr-5 py-4 rounded-full border-2 border-transparent shadow-[0_8px_30px_rgb(0,0,0,0.04)] focus:outline-none focus:border-baf-blue focus:shadow-[0_8px_30px_rgba(10,30,63,0.1)] transition-all font-poppins text-[15px] text-gray-700 bg-white">
+            </div>
+
+            <!-- Teachers Data Container -->
+            <div class="w-full">
+                <table class="w-full text-left border-collapse" id="teachersTable">
+                    <!-- Desktop Table Header -->
+                    <thead class="hidden md:table-header-group bg-baf-blue text-white rounded-t-xl shadow-sm">
+                        <tr class="font-poppins text-[15px] tracking-wide">
+                            <th class="px-6 py-5 font-semibold text-center w-20 rounded-tl-xl">ক্র. নং</th>
+                            <th class="px-6 py-5 font-semibold">শিক্ষকের নাম</th>
+                            <th class="px-6 py-5 font-semibold">পদবি</th>
+                            <th class="px-6 py-5 font-semibold text-center">বিভাগ</th>
+                            <th class="px-6 py-5 font-semibold text-center rounded-tr-xl">ফোন নাম্বার</th>
+                        </tr>
+                    </thead>
+                    <!-- Dynamic Table Body -->
+                    <tbody id="teachersBody" class="block md:table-row-group text-[15px] text-gray-700">
+                        <!-- Data will be loaded here via JavaScript -->
+                    </tbody>
+                </table>
+
+                <!-- No Results Message -->
+                <div id="noResults"
+                    class="hidden flex-col items-center justify-center py-16 text-gray-500 font-poppins bg-white rounded-xl shadow-sm border border-gray-200">
+                    <i class="fa-solid fa-user-xmark text-5xl mb-4 text-gray-300"></i>
+                    <p class="text-lg font-semibold">No teachers found!</p>
+                    <p class="text-sm mt-1">Please try searching with a different keyword.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Data Rendering & Search Script -->
+    <script>
+        // PDF থেকে নেওয়া সকল শিক্ষকের ডেটা
+        const teachersData = [
+            ["০১", "মো. আবুল কালাম আজাদ", "সহযোগী অধ্যাপক (বি.প্র)", "বাংলা", "01711-330357"],
+            ["০২", "ফাহমিদা শারমিন খান", "সহকারী অধ্যাপক", "-", "01768-610768"],
+            ["০৩", "মোহাম্মদ রেজাউল করিম", "সহকারী অধ্যাপক", "-", "01671-658061"],
+            ["০৪", "তাহেরা আক্তার", "সহকারী অধ্যাপক", "-", "01727-288343"],
+            ["০৫", "জান্নাতুল ফেরদৌস", "সহকারী অধ্যাপক", "বাংলা", "01922-337770"],
+            ["০৬", "সুলতানা রাজিয়া", "সহকারী অধ্যাপক", "-", "01845-877448"],
+            ["০৭", "মো. আসাদুজ্জামান", "প্রভাষক", "-", "01733-894742"],
+            ["০৮", "অপূর্ব দেবনাথ", "প্রভাষক", "পদার্থ", "01537-369640"],
+            ["০৯", "মো. আব্দুর রহিম", "সহযোগী অধ্যাপক", "-", "01915-680818"],
+            ["১০", "মোহাম্মদ আবিদ মিয়া", "সহযোগী অধ্যাপক", "-", "01992-619818"],
+            ["১১", "সঞ্জিত কুমার পোদ্দার", "সহকারী অধ্যাপক (বি.প্র)", "-", "01918-188199"],
+            ["১২", "মো. মিজানুর রহমান ভূঁইয়া", "সহকারী অধ্যাপক", "-", "01913-048505"],
+            ["১৩", "মো. মাসুদ আলম সুমন", "সহকারী অধ্যাপক", "ইংরেজি", "01746-296267"],
+            ["১৫", "কাজী এস. এম. আজাদ রায়হান", "প্রভাষক", "-", "01816-633811"],
+            ["১৬", "মোহাম্মদ শাহাজাহান", "প্রভাষক", "-", "01917-408651"],
+            ["১৭", "অভি চৌধুরী", "প্রভাষক", "-", "01790-491667"],
+            ["১৮", "জিনিয়া মমতাজ", "প্রভাষক", "-", "01521-334007"],
+            ["১৯", "হেলাল উদ্দিন মাহমুদ", "সহযোগী অধ্যাপক (বি.প্র)", "উদ্ভিদ বিজ্ঞান", "01914-448833"],
+            ["২০", "মো. মনিরুল ইসলাম", "সহযোগী অধ্যাপক", "-", "01914-624572"],
+            ["২১", "মো. জিফরান ইসলাম", "প্রভাষক", "তথ্য ও যোগাযোগ প্রযুক্তি", "01971-132495"],
+            ["২২", "সুমা রাণী সরকার", "প্রভাষক", "তথ্য ও যোগাযোগ প্রযুক্তি", "01953-810872"],
+            ["২৩", "মেহেদী হাসান পুলক", "প্রভাষক", "তথ্য ও যোগাযোগ প্রযুক্তি", "01999-580099"],
+            ["২৪", "জামাল হোসেন", "প্রদর্শক", "তথ্য ও যোগাযোগ প্রযুক্তি", "01729-978474"],
+            ["২৫", "নুর-এ-আলম", "প্রদর্শক", "তথ্য ও যোগাযোগ প্রযুক্তি", "01715-228899"],
+            ["২৬", "মো. আক্তার হোসেন", "সহকারী অধ্যাপক", "-", "01718-237850"],
+            ["২৭", "তহুরা রহমান", "সহকারী অধ্যাপক (বি.প্র)", "-", "013017-23955"],
+            ["২৮", "ফারজানা আক্তার", "সহকারী অধ্যাপক", "-", "01917-922127"],
+            ["২৯", "জিনাত রাহেলা", "সহকারী অধ্যাপক", "অর্থনীতি", "01914-370927"],
+            ["৩০", "মো. খোরশেদ আলম", "প্রভাষক", "-", "01911-480777"],
+            ["৩১", "তাবাসসুম নাজনীন", "প্রভাষক", "-", "01999-922327"],
+            ["৩২", "মশিউর রহমান", "প্রভাষক", "-", "01517-054550"],
+            ["৩৩", "সাগর চন্দ্র দেবনাথ", "প্রভাষক", "-", "01720-012004"],
+            ["৩৪", "মো. আমিনুল ইসলাম", "প্রভাষক (বি.প্র)", "-", "01843-748168"],
+            ["৩৫", "আরিফা নাসরিন", "প্রভাষক", "-", "01770-262160"],
+            ["৩৫", "নাজিবা আখতার (অব.)", "সহযোগী অধ্যাপক", "রাষ্ট্রবিজ্ঞান", "01552-307680"],
+            ["৩৬", "খাইরুন নাহার", "প্রভাষক", "-", "01941-568772"],
+            ["৩৭", "শাহানাজ আক্তার", "প্রভাষক", "-", "01912-058351"],
+            ["৩৯", "ফারহানা নাহার", "সহকারী অধ্যাপক (বি.প্র)", "-", "01917-748187"],
+            ["৪০", "মো. সাইদুল হাসান", "প্রভাষক", "ইসলামের ইতিহাস ও সংস্কৃতি", "01683-320732"],
+            ["৪১", "মো. আলমগীর হোসেন", "প্রভাষক", "-", "01710-071481"],
+            ["৪২", "আঞ্জুমা আক্তার", "প্রভাষক", "-", "01682-027419"],
+            ["৪০", "হাবিবা ইসলাম", "সহযোগী অধ্যাপক (বি.প্র)", "-", "01716-193079"],
+            ["৪৪", "শাহানা আক্তার", "প্রভাষক", "ইতিহাস", "01675-710180"],
+            ["৪৫", "মোসাম্মৎ জেরিন জেবা", "প্রভাষক", "-", "01949-075234"],
+            ["৪৬", "সাঈদা আফরোজা আহসান", "সহকারী অধ্যাপক (বি.প্র)", "-", "01743-720928"],
+            ["৪৭", "মেহেরুননেছা রুমি", "সহকারী অধ্যাপক", "ভূগোল ও পরিবেশ", "01843-933474"],
+            ["৪৯", "কাজী মাহবুবা সিদ্দিকা", "প্রভাষক", "-", "01950-566260"],
+            ["৫০", "মো. রাকিবুল ইসলাম", "প্রভাষক", "-", "01521-100479"],
+            ["৫১", "মুহাম্মাদ নুরুল ইসলাম আকন", "সহযোগী অধ্যাপক (বি.প্র)", "-", "01552-460228"],
+            ["৫২", "ড. মো. রেজাউল করিম", "সহযোগী অধ্যাপক", "ইসলাম শিক্ষা", "01712-351336"],
+            ["৫৪", "সাইদুল ইসলাম", "প্রভাষক", "-", "01763-402909"],
+            ["৫৫", "মো. মোজাম্মেল হক", "প্রভাষক", "-", "01788-758899"],
+            ["৫৬", "রুবিনা আক্তার", "প্রভাষক", "মনোবিজ্ঞান", "01682-044663"],
+            ["৫৭", "রাশেদা আরজু", "সহযোগী অধ্যাপক (বি.প্র)", "-", "01911-380705"],
+            ["৫৮", "খালেদা আক্তার", "সহকারী অধ্যাপক", "দর্শন", "01627-958742"],
+            ["৫৯", "রেহানা পারভীন", "প্রভাষক", "-", "01711-578035"],
+            ["৬০", "সুমাইয়া", "প্রভাষক", "-", "01714-720376"],
+            ["৬৪", "মার্জানা হক", "প্রভাষক", "কৃষিশিক্ষা", "01316-947526"],
+            ["৬৫", "কুলসুম ফাতেমা", "ক্যাটালগার", "লাইব্রেরীয়ান", "01791-548638"],
+            ["৬৬", "ফাহমিদা নাজনীন", "সহকারী অধ্যাপক (বি.প্র)", "-", "01970-702424"],
+            ["৬৭", "হাবিবা সুলতানা", "সহকারী অধ্যাপক", "সমাজকর্ম", "01716-750478"],
+            ["৬৮", "সুমাইয়া ফেরদৌসি লাজুকি", "প্রভাষক", "-", "01616-778803"],
+            ["৬৯", "ফাহমিদা আখতার", "সহকারী অধ্যাপক (বি.প্র)", "গার্হস্থ্য", "01921-690377"],
+            ["৭০", "ইসরাত আহমেদ", "সহকারী অধ্যাপক", "বিজ্ঞান", "01937-663884"],
+            ["৭১", "মো. মিজানুর রহমান সরকার", "প্রভাষক (বি.প্র)", "-", "01911-107093"],
+            ["৭২", "ফারহানা আক্তার", "প্রভাষক", "-", "01643-336488"],
+            ["৭৩", "মো. শাখাওয়াত হোসেন (অব.)", "সহযোগী অধ্যাপক", "পদার্থ", "01913-096613"],
+            ["৭৪", "মশিউর রহমান", "প্রভাষক", "বিজ্ঞান", "01571-072737"],
+            ["৭৫", "সৈয়দা উম্মে হানি", "প্রভাষক", "-", "01911-736185"],
+            ["৭৬", "তাজ আল মাসুম", "প্রভাষক", "-", "01924-517615"],
+            ["৭৭", "সালেহ মো. এনামুল ইসলাম", "সহযোগী অধ্যাপক", "-", "01712-019505"],
+            ["৭৮", "সাফায়েত উল্লাহ সরকার", "সহযোগী অধ্যাপক (বি.প্র)", "-", "01881-084743"],
+            ["৭৯", "হেলেনা আক্তার সিকদার", "প্রভাষক", "রসায়ন", "01635-121124"],
+            ["৮০", "শফিকুল ইসলাম শুভ", "প্রভাষক", "-", "01990-434070"],
+            ["৮১", "মো. মাসুদুর রহমান", "সহযোগী অধ্যাপক", "-", "01819-141945"],
+            ["৮২", "মো. রফিকুল ইসলাম", "সহযোগী অধ্যাপক (বি.প্র)", "-", "01718-265760"],
+            ["৮৪", "তামান্না তাহেরা", "প্রভাষক", "উদ্ভিদ বিজ্ঞান", "01680-448328"],
+            ["৮5", "ফারিয়া আকবর", "প্রদর্শক", "-", "01515-295705"],
+            ["৮৬", "তানজিলা রাহাত", "সহযোগী অধ্যাপক (বি.প্র)", "-", "01711-805415"],
+            ["৮৭", "নার্গিস আক্তার", "প্রভাষক", "প্রাণিবিজ্ঞান", "01720-088512"],
+            ["৮৮", "শারমিন আক্তার", "প্রভাষক", "-", "01710-827167"],
+            ["৯০", "হরপ্রসাদ বিশ্বাস", "প্রভাষক (বি.প্র)", "-", "01737-982052"],
+            ["৯১", "সারমিন ইসলাম", "প্রভাষক", "গণিত", "01521-794958"],
+            ["৯২", "আরাফাত হোসেন", "প্রভাষক", "-", "01518-935048"],
+            ["৯৩", "মো. সমীর হোসেন", "অধ্যক্ষ, চলতি দায়িত্ব", "-", "01712-158046"],
+            ["৯৪", "মোহাম্মদ মহসিন আলম", "সহযোগী অধ্যাপক (বি.প্র)", "পরিসংখ্যান", "01684-776886"],
+            ["৯৫", "শারমিন আক্তার", "প্রভাষক", "-", "01766-303177"],
+            ["৯৬", "এ. এম. এরশাদুল আলম", "সহযোগী অধ্যাপক (বি.প্র)", "-", "01881-084686"],
+            ["৯৭", "মোহাম্মদ মজিবুর রহমান", "সহযোগী অধ্যাপক", "-", "01552-406487"],
+            ["৯৮", "শাহিনা সুলতানা", "প্রভাষক", "হিসাব", "01739-035182"],
+            ["৯৯", "মো. ওবায়েদ উল্লাহ", "প্রভাষক", "বিজ্ঞান", "01676-122365"],
+            ["১০০", "উম্মে নেহা চৌধুরী", "প্রভাষক", "-", "01622-575725"],
+            ["১০১", "মো. রাজিবুল হক মিয়াজী", "প্রভাষক", "-", "01915-119296"],
+            ["১০২", "সানোয়ার হোসেন", "সহকারী অধ্যাপক (বি.প্র)", "-", "01717-298081"],
+            ["১০০", "মো. ওমর ফারুক", "প্রভাষক", "-", "01768-343098"],
+            ["১০৪", "সাদিয়া সৌমিক", "প্রভাষক", "বিবিএ", "01757-003683"],
+            ["১০৫", "অদিতি মণ্ডল", "প্রভাষক", "-", "01791-755204"],
+            ["১০৬", "উম্মে সালমা তমা", "প্রভাষক", "-", "01950-300760"],
+            ["১০৭", "উম্মে খাদিজাতুল সম্পা", "প্রভাষক", "-", "01521-354933"],
+            ["১০৮", "মোহাম্মদ আরিফ হোসেন ভূঁইয়া", "সহকারী অধ্যাপক (বি.প্র)", "-", "01712-526673"],
+            ["১০৯", "মো. খোকন মিয়া", "প্রভাষক", "ফিন্যান্স", "01518788883"],
+            ["১১০", "আইনুন নাহার", "প্রভাষক", "-", "01687-008219"],
+            ["১১১", "উম্মে সালেহা", "প্রভাষক", "ব্যাংকিং", "01553-361744"],
+            ["১১২", "মো. জহিরুল ইসলাম", "প্রভাষক", "-", "01852-223823"],
+            ["১১৩", "সোনিয়া সালমা বর্না", "সহকারী অধ্যাপক (বি.প্র)", "-", "01715-330682"],
+            ["১১৪", "শাহানা পারভীন", "প্রভাষক", "-", "01912-098332"],
+            ["১১৫", "ফাহমিদা আকন্দ", "প্রভাষক", "-", "01675-340545"],
+            ["১১৬", "মো. এমদাদুল হক (অব.)", "সহযোগী অধ্যাপক", "-", "01819-141772"],
+            ["১১৭", "জান্নাতুল আশরফুন নাহার", "প্রভাষক", "ব্যবস্থাপনা", "01684-468651"],
+            ["১১৮", "সায়েরা পারভীন", "প্রভাষক", "-", "01714-481669"],
+            ["১১৯", "মো. মইনুল হক", "প্রভাষক", "-", "01671-457080"],
+            ["১২০", "রাজিয়া সুলতানা", "প্রভাষক", "-", "01886-549058"],
+            ["১২১", "মো. শাখাওয়াত হোসেন", "সহযোগী অধ্যাপক (বি.প্র)", "-", "01716-303944"],
+            ["১২২", "মো. কাওছারুল হক", "সহযোগী অধ্যাপক", "-", "01614-040045"],
+            ["১২০", "সায়মুন নাহার", "প্রভাষক", "-", "01767-388975"],
+            ["১২৪", "মো. রুবায়েত হোসেন", "প্রভাষক", "মার্কেটিং", "01778-364730"],
+            ["১২৫", "মো. রফিকুল ইসলাম", "প্রভাষক", "-", "01793-777424"],
+            ["১২৬", "শিরিন জাহান", "প্রভাষক", "-", "01949-985999"],
+            ["১২৭", "সাবেরা ইয়াসমিন", "প্রভাষক", "-", "01933-798060"],
+            ["১২৮", "মোঃ জিয়াউল আহসান", "শরীরচর্চা শিক্ষক", "শারীরিক শিক্ষা ও ক্রীড়া", "01911-236606"]
+        ];
+
+        // ডেটা রেন্ডার করা (এখানে cite এর ট্যাগটি hidden class দিয়ে আড়াল করা হয়েছে)
+        const tbody = document.getElementById("teachersBody");
+        let htmlContent = "";
+
+        teachersData.forEach(t => {
+            let deptBadge = t[3] !== "-" ? `<span class="bg-gray-100 text-baf-blue px-2 py-1 rounded text-xs font-bold border border-gray-200 shadow-sm">${t[3]}</span>` : "-";
+            htmlContent += `
+            <tr class="table-row-card md:table-row bg-white hover:bg-gray-50 transition-colors duration-200 md:border-b border-gray-100">
+                <td data-label="ক্র. নং" class="text-center md:text-left md:px-6 md:py-4">
+                    <span class="search-data font-bold text-gray-500">${t[0]}<span class="hidden">[cite: 1]</span></span>
+                </td>
+                <td data-label="নাম" class="md:px-6 md:py-4">
+                    <span class="search-data font-bold text-baf-blue">${t[1]}<span class="hidden">[cite: 1]</span></span>
+                </td>
+                <td data-label="পদবি" class="md:px-6 md:py-4">
+                    <span class="search-data text-gray-600 font-medium">${t[2]}<span class="hidden">[cite: 1]</span></span>
+                </td>
+                <td data-label="বিভাগ" class="text-center md:px-6 md:py-4">
+                    <span class="search-data">${deptBadge}<span class="hidden">[cite: 1]</span></span>
+                </td>
+                <td data-label="ফোন" class="text-center md:px-6 md:py-4">
+                    <span class="search-data text-gray-700 font-semibold">${t[4]}<span class="hidden">[cite: 1]</span></span>
+                </td>
+            </tr>`;
+        });
+
+        tbody.innerHTML = htmlContent;
+
+        // Smart Filter Function
+        function filterTeachers() {
+            let input = document.getElementById("teacherSearch").value.toUpperCase();
+            let tr = tbody.getElementsByTagName("tr");
+            let noResults = document.getElementById("noResults");
+            let table = document.getElementById("teachersTable");
+            let matchFound = false;
+
+            for (let i = 0; i < tr.length; i++) {
+                let textValue = tr[i].textContent || tr[i].innerText;
+                if (textValue.toUpperCase().indexOf(input) > -1) {
+                    tr[i].style.display = "";
+                    matchFound = true;
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+
+            if (!matchFound && input !== "") {
+                noResults.classList.remove("hidden");
+                noResults.classList.add("flex");
+                table.classList.add("hidden");
+            } else {
+                noResults.classList.add("hidden");
+                noResults.classList.remove("flex");
+                table.classList.remove("hidden");
+            }
+        }
+    </script>
+    <!-- ================== END TEACHER'S PANEL ================== -->
+
+    <!-- ================== FOOTER SECTION ================== -->
+    <footer class="bg-[#0d1b2a] text-white pt-16 pb-6 w-full border-t-4 border-baf-gold font-sans-nav">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+
+            <!-- Main Footer Content (4 Columns) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+                <!-- Column 1: About College -->
+                <div class="flex flex-col">
+                    <!-- Logo & Title -->
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-12 h-12 bg-white rounded-full p-1 flex items-center justify-center shrink-0">
+                            <!-- Replace with real logo -->
+                            <img src="assets/images/Dania_College_Logo.png" alt="Logo"
+                                class="w-full h-full object-contain rounded-full">
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold font-serif-title tracking-widest uppercase text-white">Dania
+                                College</h2>
+                            <p class="text-[10px] text-baf-gold font-poppins uppercase tracking-wider font-semibold">
+                                EIIN: 107909</p>
+                        </div>
+                    </div>
+                    <!-- Short Description -->
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 text-justify">
+                        প্রতিষ্ঠালগ্ন (১৯৮৪) থেকে দনিয়া কলেজ মানসম্মত শিক্ষা প্রদান এবং শিক্ষার্থীদের নৈতিক ও
+                        বুদ্ধিবৃত্তিক বিকাশে নিরলসভাবে কাজ করে যাচ্ছে। আমরা একটি সুন্দর ভবিষ্যতের জন্য প্রতিশ্রুতিবদ্ধ।
+                    </p>
+                    <!-- Social Icons -->
+                    <div class="flex gap-3">
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:bg-[#1877f2] hover:text-white transition-colors duration-300 shadow-sm"
+                            title="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:bg-[#ff0000] hover:text-white transition-colors duration-300 shadow-sm"
+                            title="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:bg-blue-400 hover:text-white transition-colors duration-300 shadow-sm"
+                            title="Twitter">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:bg-[#0a66c2] hover:text-white transition-colors duration-300 shadow-sm"
+                            title="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold text-white font-poppins mb-5 flex items-center gap-2">
+                        <span class="w-2 h-2 bg-baf-gold rounded-full"></span> Quick Links
+                    </h3>
+                    <ul class="flex flex-col gap-3 text-sm text-gray-400 font-medium">
+                        <li>
+                            <a href="#"
+                                class="hover:text-baf-gold hover:pl-2 transition-all duration-300 inline-block"><i
+                                    class="fa-solid fa-angle-right text-xs mr-2 opacity-50"></i> About Us</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-baf-gold hover:pl-2 transition-all duration-300 inline-block"><i
+                                    class="fa-solid fa-angle-right text-xs mr-2 opacity-50"></i> Governing Body</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-baf-gold hover:pl-2 transition-all duration-300 inline-block"><i
+                                    class="fa-solid fa-angle-right text-xs mr-2 opacity-50"></i> Teacher's Info</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-baf-gold hover:pl-2 transition-all duration-300 inline-block"><i
+                                    class="fa-solid fa-angle-right text-xs mr-2 opacity-50"></i> Latest Notices</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-baf-gold hover:pl-2 transition-all duration-300 inline-block"><i
+                                    class="fa-solid fa-angle-right text-xs mr-2 opacity-50"></i> Photo Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Academic & Admission -->
+                <div>
+                    <h3 class="text-lg font-bold text-white font-poppins mb-5 flex items-center gap-2">
+                        <span class="w-2 h-2 bg-baf-gold rounded-full"></span> Academics
+                    </h3>
+                    <ul class="flex flex-col gap-3 text-sm text-gray-400 font-medium">
+                        <li>
+                            <a href="#"
+                                class="hover:text-baf-gold hover:pl-2 transition-all duration-300 inline-block"><i
+                                    class="fa-solid fa-angle-right text-xs mr-2 opacity-50"></i> Online Admission</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-baf-gold hover:pl-2 transition-all duration-300 inline-block"><i
+                                    class="fa-solid fa-angle-right text-xs mr-2 opacity-50"></i> Academic Calendar</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-baf-gold hover:pl-2 transition-all duration-300 inline-block"><i
+                                    class="fa-solid fa-angle-right text-xs mr-2 opacity-50"></i> Class Routine</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-baf-gold hover:pl-2 transition-all duration-300 inline-block"><i
+                                    class="fa-solid fa-angle-right text-xs mr-2 opacity-50"></i> Result Portal</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-baf-gold hover:pl-2 transition-all duration-300 inline-block"><i
+                                    class="fa-solid fa-angle-right text-xs mr-2 opacity-50"></i> Clubs &
+                                Co-curricular</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Info -->
+                <div>
+                    <h3 class="text-lg font-bold text-white font-poppins mb-5 flex items-center gap-2">
+                        <span class="w-2 h-2 bg-baf-gold rounded-full"></span> Contact Us
+                    </h3>
+                    <ul class="flex flex-col gap-4 text-sm text-gray-400">
+                        <!-- Location -->
+                        <li class="flex items-start gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-baf-gold shrink-0 mt-0.5">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <span class="leading-relaxed">Dania College,<br> Jatrabari, Dhaka - 1236,<br>
+                                Bangladesh.</span>
+                        </li>
+                        <!-- Phone -->
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-baf-gold shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <a href="tel:+88028713811" class="hover:text-baf-gold transition-colors">+88 02 8713811</a>
+                        </li>
+                        <!-- Email -->
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-baf-gold shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <a href="mailto:info@daniacollege.edu.bd"
+                                class="hover:text-baf-gold transition-colors">info@daniacollege.edu.bd</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Footer Strip -->
+            <div
+                class="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-medium">
+                <p>&copy; 2026 Dania College. All Rights Reserved.</p>
+                <div class="flex items-center gap-4">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <span class="w-1 h-1 bg-gray-600 rounded-full"></span>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+                </div>
+                <p>Designed & Developed by <a href="https://minhajsiam.ami.bd/" target="_blank"
+                        class="text-baf-gold hover:underline">Minhajur Rahman Siam</a></p>
+            </div>
+
+        </div>
+    </footer>
+    <!-- ================== END FOOTER SECTION ================== -->
+</body>
+
+</html>
