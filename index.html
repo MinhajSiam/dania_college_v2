@@ -64,27 +64,26 @@
 </head>
 
 <body class="bg-gray-50 font-sans-nav m-0 p-0">
-
-    <!-- ================== topbar start ================== -->
+    <!-- ================== Topbar Start ================== -->
     <div
-        class="w-full bg-[#0d1b2a] text-white h-11 flex items-center text-[13px] overflow-hidden border-b-2 border-baf-gold">
-
-        <div class="flex items-center gap-6 px-4 h-full shrink-0 bg-[#0d1b2a] z-20">
+        class="w-full bg-[#0d1b2a] text-white h-11 flex items-center text-[13px] overflow-hidden border-b-2 border-baf-gold relative z-50">
+        <div class="flex items-center gap-4 md:gap-6 px-4 h-full shrink-0 bg-[#0d1b2a] z-20">
             <a href="tel:+88028713811" class="flex items-center gap-2 hover:text-gray-300 transition-colors">
-                <span class="font-semibold">+880 15542 43497</span>
+                <i class="fa-solid fa-phone text-baf-gold text-[11px]"></i>
+                <span class="font-semibold text-[11px] sm:text-[13px]">+880 15542 43497</span>
             </a>
             <a href="mailto:info@daniacollege.edu.bd"
                 class="flex items-center gap-2 hover:text-gray-300 transition-colors hidden sm:flex">
+                <i class="fa-solid fa-envelope text-baf-gold"></i>
                 <span class="font-semibold">info@daniacollege.edu.bd</span>
             </a>
         </div>
 
         <div class="flex-1 h-full flex items-center bg-[#172542] relative">
             <div
-                class="slanted-edge bg-baf-gold text-black h-full flex items-center px-5 font-bold tracking-wide z-10 shrink-0 w-44">
+                class="slanted-edge bg-baf-gold text-black h-full flex items-center px-4 md:px-5 font-bold tracking-wide z-10 shrink-0 w-28 md:w-44 text-[10px] md:text-sm">
                 LATEST NOTICE
             </div>
-
             <div class="flex-1 overflow-hidden h-full flex items-center -ml-4">
                 <marquee behavior="scroll" direction="left" class="flex items-center font-medium text-gray-200"
                     scrollamount="5">
@@ -97,8 +96,8 @@
             </div>
         </div>
 
-        <div class="flex items-center gap-3 px-4 shrink-0 bg-[#0d1b2a] z-20 h-full">
-            <div class="flex gap-2 hidden md:flex text-sm">
+        <div class="flex items-center gap-3 px-2 md:px-4 shrink-0 bg-[#0d1b2a] z-20 h-full">
+            <div class="flex gap-2 hidden lg:flex text-sm">
                 <a href="#"
                     class="w-7 h-7 rounded-full bg-[#172542] flex items-center justify-center hover:bg-red-600 transition text-white">
                     <i class="fa-brands fa-youtube"></i>
@@ -108,58 +107,65 @@
                     <i class="fa-brands fa-facebook-f"></i>
                 </a>
             </div>
-
             <a href="https://daniacollege.eshiksabd.com/" target="_blank"
-                class="bg-baf-gold hover:bg-yellow-500 text-black font-bold px-5 py-1.5 rounded-full flex items-center gap-2 transition-colors ml-2 text-xs">
+                class="bg-baf-gold hover:bg-yellow-500 text-black font-bold px-3 py-1.5 md:px-5 rounded-full flex items-center gap-1.5 transition-colors text-[10px] md:text-xs shrink-0">
+                <i class="fa-solid fa-right-to-bracket hidden sm:inline"></i>
                 <span>Login EMS</span>
             </a>
         </div>
-
     </div>
-    <!-- ================== topbar end ================== -->
+    <!-- ================== Topbar End ================== -->
 
-    <!-- ================== header start ================== -->
+    <!-- ================== Header Start ================== -->
+    <!-- মোবাইলের জন্য Header কে z-50 করা হয়েছে যাতে মেনু এর নিচ থেকে নামতে পারে -->
     <header
-        class="bg-white h-[120px] px-8 md:px-16 flex justify-between items-center relative max-w-[1400px] mx-auto w-full">
+        class="bg-white h-[90px] md:h-[120px] px-4 md:px-16 flex justify-between items-center relative max-w-[1400px] mx-auto w-full z-50">
 
         <div
-            class="w-[90px] h-[90px] rounded-full border border-gray-200 p-1 flex items-center justify-center z-10 bg-white">
+            class="w-[65px] h-[65px] md:w-[90px] md:h-[90px] rounded-full border border-gray-200 p-1 flex items-center justify-center z-10 bg-white shadow-sm">
             <img src="assets/images/Dania_College_Logo.png" alt="Dania College Logo"
                 class="w-full h-full rounded-full object-contain">
         </div>
 
-        <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+        <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none px-16">
             <h1
-                class="text-3xl md:text-[36px] font-bold text-baf-blue font-serif-title tracking-[0.1em] uppercase mb-1 drop-shadow-sm">
+                class="text-xl sm:text-2xl md:text-[36px] font-bold text-baf-blue font-serif-title tracking-[0.05em] md:tracking-[0.1em] uppercase mb-0.5 md:mb-1 drop-shadow-sm text-center">
                 DANIA COLLEGE
             </h1>
-            <div class="flex items-center justify-center text-gray-500 text-[15px] font-medium mt-1 font-poppins">
-                <span>Jatrabari, Dhaka 1236 | EIIN-107909</span>
+            <div
+                class="flex items-center justify-center text-gray-500 text-[10px] sm:text-xs md:text-[15px] font-medium font-poppins text-center">
+                <span>Jatrabari, Dhaka 1236 <span class="hidden sm:inline">|</span><br class="sm:hidden">
+                    EIIN-107909</span>
             </div>
         </div>
 
-        <div class="w-[90px] hidden md:block z-10"></div>
+        <!-- Mobile Menu Toggle Button (Right Side) - স্ক্রিনশটের মত কোনো ব্যাকগ্রাউন্ড কালার ছাড়াই -->
+        <div class="block lg:hidden z-20">
+            <button id="mobile-menu-toggle"
+                class="text-baf-blue hover:text-baf-gold flex items-center justify-center text-[28px] focus:outline-none transition-colors duration-300">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
 
+        <div class="w-[90px] hidden lg:block z-10"></div>
     </header>
-    <!-- ================== header end ================== -->
+    <!-- ================== Header End ================== -->
 
     <!-- ================== Navbar Start ================== -->
-    <nav id="navbar" class="bg-baf-blue text-white w-full z-40 transition-all duration-300">
-        <div class="max-w-[1400px] mx-auto flex justify-center">
-            <ul class="flex flex-wrap items-center text-[15px] font-semibold font-poppins">
+    <nav id="navbar" class="bg-baf-blue text-white w-full z-40 transition-all duration-300 shadow-md relative">
 
-                <li class="bg-baf-blue-light">
-                    <a href="#" class="block px-6 py-4 hover:bg-baf-blue-light transition-colors">Home</a>
-                </li>
-
+        <!-- Desktop Menu -->
+        <div class="max-w-[1400px] mx-auto hidden lg:flex justify-center">
+            <ul class="flex items-center text-[15px] font-semibold font-poppins">
+                <li class="bg-baf-blue-light"><a href="#"
+                        class="block px-6 py-4 hover:bg-baf-blue-light transition-colors">Home</a></li>
                 <li class="relative group">
                     <a href="#"
                         class="flex items-center gap-1.5 px-6 py-4 hover:bg-baf-blue-light transition-colors cursor-pointer">
-                        About
-                        <i class="fa-solid fa-chevron-down text-[10px] mt-0.5"></i>
+                        About <i class="fa-solid fa-chevron-down text-[10px] mt-0.5"></i>
                     </a>
                     <ul
-                        class="dropdown-menu absolute left-0 top-full bg-white text-gray-800 w-48 shadow-lg border-t-2 border-baf-gold z-50">
+                        class="absolute left-0 top-full bg-white text-gray-800 w-48 shadow-lg border-t-2 border-baf-gold opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                         <li><a href="#"
                                 class="block px-4 py-3 hover:bg-gray-100 hover:text-baf-blue border-b border-gray-100">Our
                                 History</a></li>
@@ -170,15 +176,13 @@
                         </li>
                     </ul>
                 </li>
-
                 <li class="relative group">
                     <a href="#"
                         class="flex items-center gap-1.5 px-6 py-4 hover:bg-baf-blue-light transition-colors cursor-pointer">
-                        Academic
-                        <i class="fa-solid fa-chevron-down text-[10px] mt-0.5"></i>
+                        Academic <i class="fa-solid fa-chevron-down text-[10px] mt-0.5"></i>
                     </a>
                     <ul
-                        class="dropdown-menu absolute left-0 top-full bg-white text-gray-800 w-48 shadow-lg border-t-2 border-baf-gold z-50">
+                        class="absolute left-0 top-full bg-white text-gray-800 w-48 shadow-lg border-t-2 border-baf-gold opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                         <li><a href="#"
                                 class="block px-4 py-3 hover:bg-gray-100 hover:text-baf-blue border-b border-gray-100">Curriculum</a>
                         </li>
@@ -186,64 +190,243 @@
                         </li>
                     </ul>
                 </li>
-
                 <li class="relative group">
                     <a href="#"
                         class="flex items-center gap-1.5 px-6 py-4 hover:bg-baf-blue-light transition-colors cursor-pointer">
-                        Student Activities
-                        <i class="fa-solid fa-chevron-down text-[10px] mt-0.5"></i>
+                        Student Activities <i class="fa-solid fa-chevron-down text-[10px] mt-0.5"></i>
                     </a>
                     <ul
-                        class="dropdown-menu absolute left-0 top-full bg-white text-gray-800 w-48 shadow-lg border-t-2 border-baf-gold z-50">
+                        class="absolute left-0 top-full bg-white text-gray-800 w-48 shadow-lg border-t-2 border-baf-gold opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                         <li><a href="#"
                                 class="block px-4 py-3 hover:bg-gray-100 hover:text-baf-blue border-b border-gray-100">Clubs</a>
                         </li>
                         <li><a href="#" class="block px-4 py-3 hover:bg-gray-100 hover:text-baf-blue">Sports</a></li>
                     </ul>
                 </li>
-
-                <li class="relative group">
-                    <a href="#"
-                        class="flex items-center gap-1.5 px-6 py-4 hover:bg-baf-blue-light transition-colors cursor-pointer">
-                        News & Media
-                        <i class="fa-solid fa-chevron-down text-[10px] mt-0.5"></i>
-                    </a>
-                </li>
-
-                <li class="relative group">
-                    <a href="#"
-                        class="flex items-center gap-1.5 px-6 py-4 hover:bg-baf-blue-light transition-colors cursor-pointer">
-                        Teachers Panel
-                        <!-- <i class="fa-solid fa-chevron-down text-[10px] mt-0.5"></i> -->
-                    </a>
-                </li>
-
+                <li><a href="#" class="block px-6 py-4 hover:bg-baf-blue-light transition-colors">News & Media</a></li>
+                <li><a href="#" class="block px-6 py-4 hover:bg-baf-blue-light transition-colors">Alumni</a></li>
                 <li>
                     <a href="#" class="flex items-center gap-2 px-6 py-4 hover:bg-baf-blue-light transition-colors">
-                        Notices
-                        <span
-                            class="bg-[#e63946] text-white text-[9px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide">New</span>
+                        Notices <span
+                            class="bg-[#e63946] text-white text-[9px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide animate-pulse">New</span>
+                    </a>
+                </li>
+                <li><a href="#" class="block px-6 py-4 hover:bg-baf-blue-light transition-colors">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- ================== Huba-Hub Screenshot Mobile Dropdown Menu ================== -->
+        <div id="mobile-menu"
+            class="hidden lg:hidden absolute top-0 left-0 w-full bg-white shadow-2xl border-t border-gray-200 flex-col overflow-y-auto"
+            style="max-height: calc(100vh - 90px);">
+
+            <ul class="flex flex-col w-full text-[15px] font-bold font-poppins text-gray-900">
+
+                <!-- Active Home Item -->
+                <li class="border-b border-gray-200 bg-[#f8fafc] border-l-[4px] border-baf-gold">
+                    <a href="#" class="flex items-center gap-3 px-6 py-4 text-baf-blue">
+                        <i class="fa-solid fa-house text-baf-gold"></i>
+                        <span>Home</span>
                     </a>
                 </li>
 
-                <li>
-                    <a href="#" class="block px-6 py-4 hover:bg-baf-blue-light transition-colors">Contact</a>
+                <!-- About Accordion -->
+                <li class="border-b border-gray-200">
+                    <button
+                        class="mobile-dropdown-btn w-full flex justify-between items-center px-6 py-4 hover:bg-gray-50 transition-colors text-left">
+                        <span>About</span>
+                        <i class="fa-solid fa-caret-down text-gray-600 transition-transform duration-200 text-sm"></i>
+                    </button>
+                    <ul class="mobile-dropdown-sub hidden bg-gray-50 flex-col">
+                        <li class="border-t border-gray-200"><a href="#"
+                                class="block px-8 py-3.5 text-[14px] font-semibold text-gray-700 hover:text-baf-blue">Our
+                                History</a></li>
+                        <li class="border-t border-gray-200"><a href="#"
+                                class="block px-8 py-3.5 text-[14px] font-semibold text-gray-700 hover:text-baf-blue">Principal's
+                                Message</a></li>
+                        <li class="border-t border-gray-200"><a href="#"
+                                class="block px-8 py-3.5 text-[14px] font-semibold text-gray-700 hover:text-baf-blue">Governing
+                                Body</a></li>
+                    </ul>
+                </li>
+
+                <!-- Academic Accordion -->
+                <li class="border-b border-gray-200">
+                    <button
+                        class="mobile-dropdown-btn w-full flex justify-between items-center px-6 py-4 hover:bg-gray-50 transition-colors text-left">
+                        <span>Academic</span>
+                        <i class="fa-solid fa-caret-down text-gray-600 transition-transform duration-200 text-sm"></i>
+                    </button>
+                    <ul class="mobile-dropdown-sub hidden bg-gray-50 flex-col">
+                        <li class="border-t border-gray-200"><a href="#"
+                                class="block px-8 py-3.5 text-[14px] font-semibold text-gray-700 hover:text-baf-blue">Curriculum</a>
+                        </li>
+                        <li class="border-t border-gray-200"><a href="#"
+                                class="block px-8 py-3.5 text-[14px] font-semibold text-gray-700 hover:text-baf-blue">Class
+                                Routine</a></li>
+                    </ul>
+                </li>
+
+                <!-- Student Activities Accordion -->
+                <li class="border-b border-gray-200">
+                    <button
+                        class="mobile-dropdown-btn w-full flex justify-between items-center px-6 py-4 hover:bg-gray-50 transition-colors text-left">
+                        <span>Student Activities</span>
+                        <i class="fa-solid fa-caret-down text-gray-600 transition-transform duration-200 text-sm"></i>
+                    </button>
+                    <ul class="mobile-dropdown-sub hidden bg-gray-50 flex-col">
+                        <li class="border-t border-gray-200"><a href="#"
+                                class="block px-8 py-3.5 text-[14px] font-semibold text-gray-700 hover:text-baf-blue">Clubs</a>
+                        </li>
+                        <li class="border-t border-gray-200"><a href="#"
+                                class="block px-8 py-3.5 text-[14px] font-semibold text-gray-700 hover:text-baf-blue">Sports</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- News & Media Accordion -->
+                <li class="border-b border-gray-200">
+                    <button
+                        class="mobile-dropdown-btn w-full flex justify-between items-center px-6 py-4 hover:bg-gray-50 transition-colors text-left">
+                        <span>News & Media</span>
+                        <i class="fa-solid fa-caret-down text-gray-600 transition-transform duration-200 text-sm"></i>
+                    </button>
+                    <ul class="mobile-dropdown-sub hidden bg-gray-50 flex-col">
+                        <li class="border-t border-gray-200"><a href="#"
+                                class="block px-8 py-3.5 text-[14px] font-semibold text-gray-700 hover:text-baf-blue">Latest
+                                News</a></li>
+                        <li class="border-t border-gray-200"><a href="#"
+                                class="block px-8 py-3.5 text-[14px] font-semibold text-gray-700 hover:text-baf-blue">Events</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- Alumni Accordion -->
+                <li class="border-b border-gray-200">
+                    <button
+                        class="mobile-dropdown-btn w-full flex justify-between items-center px-6 py-4 hover:bg-gray-50 transition-colors text-left">
+                        <span>Alumni</span>
+                        <i class="fa-solid fa-caret-down text-gray-600 transition-transform duration-200 text-sm"></i>
+                    </button>
+                </li>
+
+                <!-- Notices (with NEW Badge) -->
+                <li class="border-b border-gray-200">
+                    <a href="#" class="flex items-center gap-3 px-6 py-4 hover:bg-gray-50 transition-colors">
+                        <span>Notices</span>
+                        <!-- <span
+                            class="bg-[#e63946] text-white text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider">New</span> -->
+                    </a>
+                </li>
+
+                <!-- Contact -->
+                <li class="border-b border-gray-200">
+                    <a href="#" class="block px-6 py-4 hover:bg-gray-50 transition-colors">Contact</a>
                 </li>
             </ul>
+
+            <!-- Mobile Menu Footer Section -->
+            <div class="bg-[#f8fafc] flex flex-col items-center py-10 gap-6">
+                <!-- Login Link -->
+                <a href="#"
+                    class="flex items-center gap-2 text-baf-blue font-semibold font-poppins text-[15px] hover:text-baf-gold transition-colors">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i> Login EMS to Portal
+                </a>
+
+                <!-- Social Icons -->
+                <div class="flex items-center gap-3">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-[#0d1b2a] flex items-center justify-center text-white text-lg hover:bg-baf-gold transition-colors shadow-sm"><i
+                            class="fa-brands fa-youtube"></i></a>
+                    <!-- <a href="#"
+                        class="w-10 h-10 rounded-full bg-[#0d1b2a] flex items-center justify-center text-white text-lg hover:bg-baf-gold transition-colors shadow-sm"><i
+                            class="fa-brands fa-kickstarter-k"></i></a> -->
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-[#0d1b2a] flex items-center justify-center text-white text-lg hover:bg-baf-gold transition-colors shadow-sm"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                </div>
+
+                <!-- Email Info -->
+                <a href="mailto:info@daniacollege.edu.bd"
+                    class="flex items-center gap-2 text-gray-500 font-semibold text-sm hover:text-baf-blue transition-colors">
+                    <i class="fa-solid fa-envelope text-baf-gold"></i> info@daniacollege.edu.bd
+                </a>
+            </div>
+
         </div>
     </nav>
+
+    <!-- Mobile Menu Interaction Script -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+
+            // --- Sticky Navbar Logic (Desktop Only) ---
             const navbar = document.getElementById('navbar');
             const sticky = navbar.offsetTop;
 
             window.onscroll = function () {
                 if (window.pageYOffset >= sticky) {
-                    navbar.classList.add("fixed", "top-0", "shadow-xl");
+                    if (window.innerWidth >= 1024) {
+                        navbar.classList.add("fixed", "top-0", "shadow-xl");
+                    }
                 } else {
                     navbar.classList.remove("fixed", "top-0", "shadow-xl");
                 }
             };
+
+            // --- Mobile Dropdown Menu Toggle ---
+            const toggleBtn = document.getElementById('mobile-menu-toggle');
+            const menuIcon = document.getElementById('menu-icon');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            toggleBtn.addEventListener('click', function () {
+                if (mobileMenu.classList.contains('hidden')) {
+                    // Open the full-width menu
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('flex');
+
+                    // Change Hamburger to 'X' (Close Icon)
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+
+                    // Optional: stop body scroll when menu is open
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    // Close the menu
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+
+                    // Revert 'X' back to Hamburger
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+
+                    // Restore body scroll
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // --- Mobile Accordion Sub-menu Logic ---
+            const dropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
+
+            dropdownBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const subMenu = this.nextElementSibling;
+                    const chevronIcon = this.querySelector('i');
+
+                    if (subMenu.classList.contains('hidden')) {
+                        // Open sub-menu
+                        subMenu.classList.remove('hidden');
+                        subMenu.classList.add('flex');
+                        chevronIcon.style.transform = 'rotate(180deg)';
+                    } else {
+                        // Close sub-menu
+                        subMenu.classList.add('hidden');
+                        subMenu.classList.remove('flex');
+                        chevronIcon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+
         });
     </script>
     <!-- ================== Navbar End ================== -->
