@@ -85,13 +85,17 @@
                 LATEST NOTICE
             </div>
             <div class="flex-1 overflow-hidden h-full flex items-center -ml-4">
-                <marquee behavior="scroll" direction="left" class="flex items-center font-medium text-gray-200"
+                <!-- <marquee behavior="scroll" direction="left" class="flex items-center font-medium text-gray-200"
                     scrollamount="5">
                     <span class="mx-4">Subject-wise list of selected candidates for class demonstration/ practical
                         test</span>
                     <span class="inline-block w-2 h-2 rounded-full bg-baf-gold mx-2"></span>
                     <span class="bg-red-600 text-white text-[10px] px-1.5 py-0.5 rounded font-bold mx-2">NEW</span>
                     <span class="mx-4">Schedule of Class Demo-2026</span>
+                </marquee> -->
+                <marquee behavior="scroll" direction="left" class="flex items-center font-medium text-gray-200"
+                    scrollamount="5" id="topbarMarquee">
+                    <!-- জাভাস্ক্রিপ্ট দিয়ে এখানে লেটেস্ট নোটিশ আসবে -->
                 </marquee>
             </div>
         </div>
@@ -612,112 +616,14 @@
                         <h3 class="text-lg font-bold text-baf-blue font-poppins flex items-center gap-2">
                             <i class="fa-regular fa-clipboard text-baf-gold"></i> Latest Notices
                         </h3>
-                        <a href="#"
+                        <a href="notices.html"
                             class="text-sm font-semibold text-gray-500 hover:text-baf-blue transition-colors">View All
                             <i class="fa-solid fa-arrow-right text-[11px] ml-1"></i></a>
                     </div>
 
                     <!-- Notice List (Scrollable Area) -->
-                    <div class="notice-scrollbar overflow-y-auto h-[400px] p-2">
-
-                        <!-- Notice Item 1 -->
-                        <div
-                            class="flex items-start gap-4 p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors group rounded">
-                            <!-- Date Badge -->
-                            <div
-                                class="bg-baf-blue group-hover:bg-baf-gold transition-colors text-white group-hover:text-black rounded px-3 py-2 text-center min-w-[70px] shrink-0 shadow-sm">
-                                <span class="block text-xl font-bold font-poppins leading-none">05</span>
-                                <span class="block text-xs uppercase tracking-widest mt-1">Aug</span>
-                            </div>
-                            <!-- Content -->
-                            <div class="flex-1">
-                                <a href="#"
-                                    class="block text-baf-blue font-semibold text-[15px] md:text-base group-hover:text-blue-700 transition-colors font-poppins leading-snug">
-                                    Subject-wise list of selected candidates for class demonstration/ practical test.
-                                </a>
-                                <div class="mt-2 flex items-center gap-3 text-xs text-gray-500 font-medium">
-                                    <span
-                                        class="bg-baf-red text-white px-2 py-0.5 rounded font-bold uppercase tracking-wider text-[9px]">New</span>
-                                    <span><i class="fa-regular fa-clock mr-1"></i> 2 hours ago</span>
-                                </div>
-                            </div>
-                            <!-- Download Button -->
-                            <a href="#"
-                                class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 group-hover:bg-baf-blue group-hover:text-white transition-colors shrink-0 shadow-sm"
-                                title="Download PDF">
-                                <i class="fa-solid fa-download"></i>
-                            </a>
-                        </div>
-
-                        <!-- Notice Item 2 -->
-                        <div
-                            class="flex items-start gap-4 p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors group rounded">
-                            <div
-                                class="bg-baf-blue group-hover:bg-baf-gold transition-colors text-white group-hover:text-black rounded px-3 py-2 text-center min-w-[70px] shrink-0 shadow-sm">
-                                <span class="block text-xl font-bold font-poppins leading-none">02</span>
-                                <span class="block text-xs uppercase tracking-widest mt-1">Aug</span>
-                            </div>
-                            <div class="flex-1">
-                                <a href="#"
-                                    class="block text-baf-blue font-semibold text-[15px] md:text-base group-hover:text-blue-700 transition-colors font-poppins leading-snug">
-                                    HSC 1st Year (Session 2025-2026) Admission Guidelines and Necessary Documents.
-                                </a>
-                                <div class="mt-2 flex items-center gap-3 text-xs text-gray-500 font-medium">
-                                    <span><i class="fa-regular fa-clock mr-1"></i> 3 days ago</span>
-                                </div>
-                            </div>
-                            <a href="#"
-                                class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 group-hover:bg-baf-blue group-hover:text-white transition-colors shrink-0 shadow-sm">
-                                <i class="fa-solid fa-download"></i>
-                            </a>
-                        </div>
-
-                        <!-- Notice Item 3 -->
-                        <div
-                            class="flex items-start gap-4 p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors group rounded">
-                            <div
-                                class="bg-baf-blue group-hover:bg-baf-gold transition-colors text-white group-hover:text-black rounded px-3 py-2 text-center min-w-[70px] shrink-0 shadow-sm">
-                                <span class="block text-xl font-bold font-poppins leading-none">28</span>
-                                <span class="block text-xs uppercase tracking-widest mt-1">Jul</span>
-                            </div>
-                            <div class="flex-1">
-                                <a href="#"
-                                    class="block text-baf-blue font-semibold text-[15px] md:text-base group-hover:text-blue-700 transition-colors font-poppins leading-snug">
-                                    Revised Class Routine for Degree Pass and Certificate Course 2nd Year.
-                                </a>
-                                <div class="mt-2 flex items-center gap-3 text-xs text-gray-500 font-medium">
-                                    <span><i class="fa-regular fa-clock mr-1"></i> 1 week ago</span>
-                                </div>
-                            </div>
-                            <a href="#"
-                                class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 group-hover:bg-baf-blue group-hover:text-white transition-colors shrink-0 shadow-sm">
-                                <i class="fa-solid fa-download"></i>
-                            </a>
-                        </div>
-
-                        <!-- Notice Item 4 -->
-                        <div
-                            class="flex items-start gap-4 p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors group rounded">
-                            <div
-                                class="bg-baf-blue group-hover:bg-baf-gold transition-colors text-white group-hover:text-black rounded px-3 py-2 text-center min-w-[70px] shrink-0 shadow-sm">
-                                <span class="block text-xl font-bold font-poppins leading-none">20</span>
-                                <span class="block text-xs uppercase tracking-widest mt-1">Jul</span>
-                            </div>
-                            <div class="flex-1">
-                                <a href="#"
-                                    class="block text-baf-blue font-semibold text-[15px] md:text-base group-hover:text-blue-700 transition-colors font-poppins leading-snug">
-                                    Schedule of Class Demo-2026 for newly appointed lecturers.
-                                </a>
-                                <div class="mt-2 flex items-center gap-3 text-xs text-gray-500 font-medium">
-                                    <span><i class="fa-regular fa-clock mr-1"></i> 2 weeks ago</span>
-                                </div>
-                            </div>
-                            <a href="#"
-                                class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 group-hover:bg-baf-blue group-hover:text-white transition-colors shrink-0 shadow-sm">
-                                <i class="fa-solid fa-download"></i>
-                            </a>
-                        </div>
-
+                    <div class="notice-scrollbar overflow-y-auto h-[400px] p-2" id="homeNoticeContainer">
+                        <!-- জাভাস্ক্রিপ্ট দিয়ে এখানে লেটেস্ট ৪টি নোটিশ আসবে -->
                     </div>
                 </div>
 
@@ -1652,6 +1558,56 @@
     </footer>
     <!-- ================== END FOOTER SECTION ================== -->
 
+
+
+
+
+    <!-- শেয়ার্ড ডেটা ফাইল লিংক -->
+    <script src="noticesData.js"></script>
+
+    <!-- হোমপেজে নোটিশ দেখানোর ডায়নামিক স্ক্রিপ্ট -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // ১. লেটেস্ট ৪টি নোটিশ আলাদা করা
+            const latestNotices = noticesData.slice(0, 4);
+
+            // ২. Topbar Marquee তে ডাটা পাঠানো
+            const marquee = document.getElementById("topbarMarquee");
+            let marqueeHTML = "";
+            latestNotices.forEach(notice => {
+                let newBadge = notice.isNew ? `<span class="bg-red-600 text-white text-[10px] px-1.5 py-0.5 rounded font-bold mx-2">NEW</span>` : '';
+                marqueeHTML += `<span class="mx-4">${notice.title}</span> ${newBadge} <span class="inline-block w-2 h-2 rounded-full bg-baf-gold mx-2"></span>`;
+            });
+            marquee.innerHTML = marqueeHTML;
+
+            // ৩. Notice Board এ ডাটা পাঠানো
+            const noticeContainer = document.getElementById("homeNoticeContainer");
+            let noticeHTML = "";
+            latestNotices.forEach(notice => {
+                let newBadge = notice.isNew ? `<span class="bg-baf-red text-white px-2 py-0.5 rounded font-bold uppercase tracking-wider text-[9px]">New</span>` : '';
+                noticeHTML += `
+            <div class="flex items-start gap-4 p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors group rounded">
+                <div class="bg-baf-blue group-hover:bg-baf-gold transition-colors text-white group-hover:text-black rounded px-3 py-2 text-center min-w-[70px] shrink-0 shadow-sm">
+                    <span class="block text-xl font-bold font-poppins leading-none">${notice.day}</span>
+                    <span class="block text-xs uppercase tracking-widest mt-1">${notice.month}</span>
+                </div>
+                <div class="flex-1">
+                    <a href="notices.html" class="block text-baf-blue font-semibold text-[15px] md:text-base group-hover:text-blue-700 transition-colors font-poppins leading-snug">
+                        ${notice.title}
+                    </a>
+                    <div class="mt-2 flex items-center gap-3 text-xs text-gray-500 font-medium">
+                        ${newBadge}
+                        <span><i class="fa-regular fa-clock mr-1"></i> ${notice.time}</span>
+                    </div>
+                </div>
+                <a href="#" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 group-hover:bg-baf-blue group-hover:text-white transition-colors shrink-0 shadow-sm" title="Download PDF">
+                    <i class="fa-solid fa-download"></i>
+                </a>
+            </div>`;
+            });
+            noticeContainer.innerHTML = noticeHTML;
+        });
+    </script>
 </body>
 
 </html>

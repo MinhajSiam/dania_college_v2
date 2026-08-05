@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/images/Dania_College_Logo.png" type="image/png">
-    <title>Dania College | Teacher's Panel</title>
+    <title>Dania College | Notices</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -436,282 +436,194 @@
     </script>
     <!-- ================== Navbar End ================== -->
 
-    <!-- ================== TEACHER'S PANEL SECTION ================== -->
-    <style>
-        /* Mobile Responsive Table CSS (Turns Rows into Cards) */
-        @media (max-width: 767px) {
-            .table-row-card td {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 12px 16px;
-                border-bottom: 1px solid #f3f4f6;
-            }
 
-            .table-row-card td::before {
-                content: attr(data-label);
-                font-size: 12px;
-                font-weight: bold;
-                color: #9ca3af;
-                text-transform: uppercase;
-            }
-
-            .table-row-card {
-                display: block;
-                margin-bottom: 16px;
-                background: #fff;
-                border-radius: 12px;
-                border: 1px solid #e5e7eb;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-            }
-        }
-    </style>
-
+    <!-- ================== ALL NOTICES PANEL SECTION ================== -->
     <section class="bg-[#f4f7fe] py-16 w-full min-h-screen font-sans-nav">
         <div class="max-w-[1200px] mx-auto px-4 md:px-8">
 
             <!-- Section Header -->
-            <div class="text-center mb-12">
+            <div class="text-center mb-10">
                 <div class="flex items-center justify-center gap-3 mb-3">
                     <span class="w-8 h-1 bg-baf-gold rounded"></span>
-                    <h4 class="text-baf-blue font-bold text-sm uppercase tracking-widest font-poppins">Faculty Members
-                    </h4>
+                    <h4 class="text-baf-blue font-bold text-sm uppercase tracking-widest font-poppins">Updates &
+                        Announcements</h4>
                     <span class="w-8 h-1 bg-baf-gold rounded"></span>
                 </div>
-                <h2 class="text-3xl md:text-[40px] font-bold text-gray-900 font-serif-title mb-4">Our Honorable Teachers
-                </h2>
+                <h2 class="text-3xl md:text-[40px] font-bold text-gray-900 font-serif-title mb-4">Notice Board</h2>
                 <p class="text-gray-500 text-sm md:text-base max-w-2xl mx-auto font-medium">
-                    Meet our highly qualified and dedicated faculty members who are committed to nurturing the future
-                    leaders.
+                    Stay updated with the latest academic, administrative, and event-related announcements of Dania
+                    College.
                 </p>
             </div>
 
-            <!-- Smart Search Bar -->
-            <div class="mb-10 max-w-2xl mx-auto relative group">
-                <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
-                    <i
-                        class="fa-solid fa-magnifying-glass text-gray-400 group-focus-within:text-baf-blue transition-colors"></i>
+            <!-- Search and Filter Bar -->
+            <div class="mb-10 max-w-3xl mx-auto flex flex-col md:flex-row gap-4">
+                <div class="relative group flex-1">
+                    <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+                        <i
+                            class="fa-solid fa-magnifying-glass text-gray-400 group-focus-within:text-baf-blue transition-colors"></i>
+                    </div>
+                    <input type="text" id="noticeSearch" onkeyup="filterNotices()"
+                        placeholder="Search notices by keyword or subject..."
+                        class="w-full pl-12 pr-5 py-3.5 rounded-xl border-2 border-transparent shadow-sm focus:outline-none focus:border-baf-blue focus:shadow-md transition-all font-poppins text-[15px] text-gray-700 bg-white">
                 </div>
-                <input type="text" id="teacherSearch" onkeyup="filterTeachers()"
-                    placeholder="Search by name, department or designation..."
-                    class="w-full pl-12 pr-5 py-4 rounded-full border-2 border-transparent shadow-[0_8px_30px_rgb(0,0,0,0.04)] focus:outline-none focus:border-baf-blue focus:shadow-[0_8px_30px_rgba(10,30,63,0.1)] transition-all font-poppins text-[15px] text-gray-700 bg-white">
+                <select id="categoryFilter" onchange="filterNotices()"
+                    class="px-5 py-3.5 rounded-xl border-2 border-transparent shadow-sm focus:outline-none focus:border-baf-blue bg-white text-gray-600 font-poppins text-[15px] cursor-pointer">
+                    <option value="All">All Categories</option>
+                    <option value="Academic">Academic</option>
+                    <option value="Admission">Admission</option>
+                    <option value="Events">Events & Activities</option>
+                </select>
             </div>
 
-            <!-- Teachers Data Container -->
-            <div class="w-full">
-                <table class="w-full text-left border-collapse" id="teachersTable">
-                    <!-- Desktop Table Header -->
-                    <thead class="hidden md:table-header-group bg-baf-blue text-white rounded-t-xl shadow-sm">
-                        <tr class="font-poppins text-[15px] tracking-wide">
-                            <th class="px-6 py-5 font-semibold text-center w-20 rounded-tl-xl">ক্র. নং</th>
-                            <th class="px-6 py-5 font-semibold">শিক্ষকের নাম</th>
-                            <th class="px-6 py-5 font-semibold">পদবি</th>
-                            <th class="px-6 py-5 font-semibold text-center">বিভাগ</th>
-                            <th class="px-6 py-5 font-semibold text-center rounded-tr-xl">ফোন নাম্বার</th>
-                        </tr>
-                    </thead>
-                    <!-- Dynamic Table Body -->
-                    <tbody id="teachersBody" class="block md:table-row-group text-[15px] text-gray-700">
-                        <!-- Data will be loaded here via JavaScript -->
-                    </tbody>
-                </table>
+            <!-- Notices List Container -->
+            <div id="noticeContainer" class="flex flex-col gap-4">
+                <!-- Data will be populated here via JavaScript -->
+            </div>
 
-                <!-- No Results Message -->
-                <div id="noResults"
-                    class="hidden flex-col items-center justify-center py-16 text-gray-500 font-poppins bg-white rounded-xl shadow-sm border border-gray-200">
-                    <i class="fa-solid fa-user-xmark text-5xl mb-4 text-gray-300"></i>
-                    <p class="text-lg font-semibold">No teachers found!</p>
-                    <p class="text-sm mt-1">Please try searching with a different keyword.</p>
-                </div>
+            <!-- No Results Message -->
+            <div id="noNoticeResults"
+                class="hidden flex-col items-center justify-center py-16 text-gray-500 font-poppins bg-white rounded-xl shadow-sm border border-gray-200 mt-4">
+                <i class="fa-regular fa-folder-open text-5xl mb-4 text-gray-300"></i>
+                <p class="text-lg font-semibold">No notices found!</p>
+                <p class="text-sm mt-1">Please try searching with a different keyword or category.</p>
+            </div>
+
+            <!-- Pagination Container -->
+            <div id="paginationContainer" class="mt-10 flex justify-center items-center gap-2 font-poppins">
+                <!-- Pagination buttons will be generated here -->
             </div>
 
         </div>
     </section>
 
-    <!-- Data Rendering & Search Script -->
+
+    <script src="noticesData.js"></script>
+
+
+    <!-- Notices Data & Pagination Script -->
     <script>
-        // PDF থেকে নেওয়া সকল শিক্ষকের ডেটা
-        const teachersData = [
-            ["০১", "মো. আবুল কালাম আজাদ", "সহযোগী অধ্যাপক (বি.প্র)", "বাংলা", "01711-330357"],
-            ["০২", "ফাহমিদা শারমিন খান", "সহকারী অধ্যাপক", "-", "01768-610768"],
-            ["০৩", "মোহাম্মদ রেজাউল করিম", "সহকারী অধ্যাপক", "-", "01671-658061"],
-            ["০৪", "তাহেরা আক্তার", "সহকারী অধ্যাপক", "-", "01727-288343"],
-            ["০৫", "জান্নাতুল ফেরদৌস", "সহকারী অধ্যাপক", "বাংলা", "01922-337770"],
-            ["০৬", "সুলতানা রাজিয়া", "সহকারী অধ্যাপক", "-", "01845-877448"],
-            ["০৭", "মো. আসাদুজ্জামান", "প্রভাষক", "-", "01733-894742"],
-            ["০৮", "অপূর্ব দেবনাথ", "প্রভাষক", "পদার্থ", "01537-369640"],
-            ["০৯", "মো. আব্দুর রহিম", "সহযোগী অধ্যাপক", "-", "01915-680818"],
-            ["১০", "মোহাম্মদ আবিদ মিয়া", "সহযোগী অধ্যাপক", "-", "01992-619818"],
-            ["১১", "সঞ্জিত কুমার পোদ্দার", "সহকারী অধ্যাপক (বি.প্র)", "-", "01918-188199"],
-            ["১২", "মো. মিজানুর রহমান ভূঁইয়া", "সহকারী অধ্যাপক", "-", "01913-048505"],
-            ["১৩", "মো. মাসুদ আলম সুমন", "সহকারী অধ্যাপক", "ইংরেজি", "01746-296267"],
-            ["১৫", "কাজী এস. এম. আজাদ রায়হান", "প্রভাষক", "-", "01816-633811"],
-            ["১৬", "মোহাম্মদ শাহাজাহান", "প্রভাষক", "-", "01917-408651"],
-            ["১৭", "অভি চৌধুরী", "প্রভাষক", "-", "01790-491667"],
-            ["১৮", "জিনিয়া মমতাজ", "প্রভাষক", "-", "01521-334007"],
-            ["১৯", "হেলাল উদ্দিন মাহমুদ", "সহযোগী অধ্যাপক (বি.প্র)", "উদ্ভিদ বিজ্ঞান", "01914-448833"],
-            ["২০", "মো. মনিরুল ইসলাম", "সহযোগী অধ্যাপক", "-", "01914-624572"],
-            ["২১", "মো. জিফরান ইসলাম", "প্রভাষক", "তথ্য ও যোগাযোগ প্রযুক্তি", "01971-132495"],
-            ["২২", "সুমা রাণী সরকার", "প্রভাষক", "তথ্য ও যোগাযোগ প্রযুক্তি", "01953-810872"],
-            ["২৩", "মেহেদী হাসান পুলক", "প্রভাষক", "তথ্য ও যোগাযোগ প্রযুক্তি", "01999-580099"],
-            ["২৪", "জামাল হোসেন", "প্রদর্শক", "তথ্য ও যোগাযোগ প্রযুক্তি", "01729-978474"],
-            ["২৫", "নুর-এ-আলম", "প্রদর্শক", "তথ্য ও যোগাযোগ প্রযুক্তি", "01715-228899"],
-            ["২৬", "মো. আক্তার হোসেন", "সহকারী অধ্যাপক", "-", "01718-237850"],
-            ["২৭", "তহুরা রহমান", "সহকারী অধ্যাপক (বি.প্র)", "-", "013017-23955"],
-            ["২৮", "ফারজানা আক্তার", "সহকারী অধ্যাপক", "-", "01917-922127"],
-            ["২৯", "জিনাত রাহেলা", "সহকারী অধ্যাপক", "অর্থনীতি", "01914-370927"],
-            ["৩০", "মো. খোরশেদ আলম", "প্রভাষক", "-", "01911-480777"],
-            ["৩১", "তাবাসসুম নাজনীন", "প্রভাষক", "-", "01999-922327"],
-            ["৩২", "মশিউর রহমান", "প্রভাষক", "-", "01517-054550"],
-            ["৩৩", "সাগর চন্দ্র দেবনাথ", "প্রভাষক", "-", "01720-012004"],
-            ["৩৪", "মো. আমিনুল ইসলাম", "প্রভাষক (বি.প্র)", "-", "01843-748168"],
-            ["৩৫", "আরিফা নাসরিন", "প্রভাষক", "-", "01770-262160"],
-            ["৩৫", "নাজিবা আখতার (অব.)", "সহযোগী অধ্যাপক", "রাষ্ট্রবিজ্ঞান", "01552-307680"],
-            ["৩৬", "খাইরুন নাহার", "প্রভাষক", "-", "01941-568772"],
-            ["৩৭", "শাহানাজ আক্তার", "প্রভাষক", "-", "01912-058351"],
-            ["৩৯", "ফারহানা নাহার", "সহকারী অধ্যাপক (বি.প্র)", "-", "01917-748187"],
-            ["৪০", "মো. সাইদুল হাসান", "প্রভাষক", "ইসলামের ইতিহাস ও সংস্কৃতি", "01683-320732"],
-            ["৪১", "মো. আলমগীর হোসেন", "প্রভাষক", "-", "01710-071481"],
-            ["৪২", "আঞ্জুমা আক্তার", "প্রভাষক", "-", "01682-027419"],
-            ["৪০", "হাবিবা ইসলাম", "সহযোগী অধ্যাপক (বি.প্র)", "-", "01716-193079"],
-            ["৪৪", "শাহানা আক্তার", "প্রভাষক", "ইতিহাস", "01675-710180"],
-            ["৪৫", "মোসাম্মৎ জেরিন জেবা", "প্রভাষক", "-", "01949-075234"],
-            ["৪৬", "সাঈদা আফরোজা আহসান", "সহকারী অধ্যাপক (বি.প্র)", "-", "01743-720928"],
-            ["৪৭", "মেহেরুননেছা রুমি", "সহকারী অধ্যাপক", "ভূগোল ও পরিবেশ", "01843-933474"],
-            ["৪৯", "কাজী মাহবুবা সিদ্দিকা", "প্রভাষক", "-", "01950-566260"],
-            ["৫০", "মো. রাকিবুল ইসলাম", "প্রভাষক", "-", "01521-100479"],
-            ["৫১", "মুহাম্মাদ নুরুল ইসলাম আকন", "সহযোগী অধ্যাপক (বি.প্র)", "-", "01552-460228"],
-            ["৫২", "ড. মো. রেজাউল করিম", "সহযোগী অধ্যাপক", "ইসলাম শিক্ষা", "01712-351336"],
-            ["৫৪", "সাইদুল ইসলাম", "প্রভাষক", "-", "01763-402909"],
-            ["৫৫", "মো. মোজাম্মেল হক", "প্রভাষক", "-", "01788-758899"],
-            ["৫৬", "রুবিনা আক্তার", "প্রভাষক", "মনোবিজ্ঞান", "01682-044663"],
-            ["৫৭", "রাশেদা আরজু", "সহযোগী অধ্যাপক (বি.প্র)", "-", "01911-380705"],
-            ["৫৮", "খালেদা আক্তার", "সহকারী অধ্যাপক", "দর্শন", "01627-958742"],
-            ["৫৯", "রেহানা পারভীন", "প্রভাষক", "-", "01711-578035"],
-            ["৬০", "সুমাইয়া", "প্রভাষক", "-", "01714-720376"],
-            ["৬৪", "মার্জানা হক", "প্রভাষক", "কৃষিশিক্ষা", "01316-947526"],
-            ["৬৫", "কুলসুম ফাতেমা", "ক্যাটালগার", "লাইব্রেরীয়ান", "01791-548638"],
-            ["৬৬", "ফাহমিদা নাজনীন", "সহকারী অধ্যাপক (বি.প্র)", "-", "01970-702424"],
-            ["৬৭", "হাবিবা সুলতানা", "সহকারী অধ্যাপক", "সমাজকর্ম", "01716-750478"],
-            ["৬৮", "সুমাইয়া ফেরদৌসি লাজুকি", "প্রভাষক", "-", "01616-778803"],
-            ["৬৯", "ফাহমিদা আখতার", "সহকারী অধ্যাপক (বি.প্র)", "গার্হস্থ্য", "01921-690377"],
-            ["৭০", "ইসরাত আহমেদ", "সহকারী অধ্যাপক", "বিজ্ঞান", "01937-663884"],
-            ["৭১", "মো. মিজানুর রহমান সরকার", "প্রভাষক (বি.প্র)", "-", "01911-107093"],
-            ["৭২", "ফারহানা আক্তার", "প্রভাষক", "-", "01643-336488"],
-            ["৭৩", "মো. শাখাওয়াত হোসেন (অব.)", "সহযোগী অধ্যাপক", "পদার্থ", "01913-096613"],
-            ["৭৪", "মশিউর রহমান", "প্রভাষক", "বিজ্ঞান", "01571-072737"],
-            ["৭৫", "সৈয়দা উম্মে হানি", "প্রভাষক", "-", "01911-736185"],
-            ["৭৬", "তাজ আল মাসুম", "প্রভাষক", "-", "01924-517615"],
-            ["৭৭", "সালেহ মো. এনামুল ইসলাম", "সহযোগী অধ্যাপক", "-", "01712-019505"],
-            ["৭৮", "সাফায়েত উল্লাহ সরকার", "সহযোগী অধ্যাপক (বি.প্র)", "-", "01881-084743"],
-            ["৭৯", "হেলেনা আক্তার সিকদার", "প্রভাষক", "রসায়ন", "01635-121124"],
-            ["৮০", "শফিকুল ইসলাম শুভ", "প্রভাষক", "-", "01990-434070"],
-            ["৮১", "মো. মাসুদুর রহমান", "সহযোগী অধ্যাপক", "-", "01819-141945"],
-            ["৮২", "মো. রফিকুল ইসলাম", "সহযোগী অধ্যাপক (বি.প্র)", "-", "01718-265760"],
-            ["৮৪", "তামান্না তাহেরা", "প্রভাষক", "উদ্ভিদ বিজ্ঞান", "01680-448328"],
-            ["৮5", "ফারিয়া আকবর", "প্রদর্শক", "-", "01515-295705"],
-            ["৮৬", "তানজিলা রাহাত", "সহযোগী অধ্যাপক (বি.প্র)", "-", "01711-805415"],
-            ["৮৭", "নার্গিস আক্তার", "প্রভাষক", "প্রাণিবিজ্ঞান", "01720-088512"],
-            ["৮৮", "শারমিন আক্তার", "প্রভাষক", "-", "01710-827167"],
-            ["৯০", "হরপ্রসাদ বিশ্বাস", "প্রভাষক (বি.প্র)", "-", "01737-982052"],
-            ["৯১", "সারমিন ইসলাম", "প্রভাষক", "গণিত", "01521-794958"],
-            ["৯২", "আরাফাত হোসেন", "প্রভাষক", "-", "01518-935048"],
-            ["৯৩", "মো. সমীর হোসেন", "অধ্যক্ষ, চলতি দায়িত্ব", "পরিসংখ্যান", "01712-158046"],
-            ["৯৪", "মোহাম্মদ মহসিন আলম", "সহযোগী অধ্যাপক (বি.প্র)", "পরিসংখ্যান", "01684-776886"],
-            ["৯৫", "শারমিন আক্তার", "প্রভাষক", "-", "01766-303177"],
-            ["৯৬", "এ. এম. এরশাদুল আলম", "সহযোগী অধ্যাপক (বি.প্র)", "-", "01881-084686"],
-            ["৯৭", "মোহাম্মদ মজিবুর রহমান", "সহযোগী অধ্যাপক", "হিসাববিজ্ঞান", "01552-406487"],
-            ["৯৮", "শাহিনা সুলতানা", "প্রভাষক", "হিসাববিজ্ঞান", "01739-035182"],
-            ["৯৯", "মো. ওবায়েদ উল্লাহ", "প্রভাষক", "হিসাববিজ্ঞান", "01676-122365"],
-            ["১০০", "উম্মে নেহা চৌধুরী", "প্রভাষক", "-", "01622-575725"],
-            ["১০১", "মো. রাজিবুল হক মিয়াজী", "প্রভাষক", "-", "01915-119296"],
-            ["১০২", "সানোয়ার হোসেন", "সহকারী অধ্যাপক (বি.প্র)", "-", "01717-298081"],
-            ["১০০", "মো. ওমর ফারুক", "প্রভাষক", "-", "01768-343098"],
-            ["১০৪", "সাদিয়া সৌমিক", "প্রভাষক", "বিবিএ", "01757-003683"],
-            ["১০৫", "অদিতি মণ্ডল", "প্রভাষক", "-", "01791-755204"],
-            ["১০৬", "উম্মে সালমা তমা", "প্রভাষক", "-", "01950-300760"],
-            ["১০৭", "উম্মে খাদিজাতুল সম্পা", "প্রভাষক", "-", "01521-354933"],
-            ["১০৮", "মোহাম্মদ আরিফ হোসেন ভূঁইয়া", "সহকারী অধ্যাপক (বি.প্র)", "-", "01712-526673"],
-            ["১০৯", "মো. খোকন মিয়া", "প্রভাষক", "ফিন্যান্স", "01518788883"],
-            ["১১০", "আইনুন নাহার", "প্রভাষক", "-", "01687-008219"],
-            ["১১১", "উম্মে সালেহা", "প্রভাষক", "ব্যাংকিং", "01553-361744"],
-            ["১১২", "মো. জহিরুল ইসলাম", "প্রভাষক", "-", "01852-223823"],
-            ["১১৩", "সোনিয়া সালমা বর্না", "সহকারী অধ্যাপক (বি.প্র)", "-", "01715-330682"],
-            ["১১৪", "শাহানা পারভীন", "প্রভাষক", "-", "01912-098332"],
-            ["১১৫", "ফাহমিদা আকন্দ", "প্রভাষক", "-", "01675-340545"],
-            ["১১৬", "মো. এমদাদুল হক (অব.)", "সহযোগী অধ্যাপক", "-", "01819-141772"],
-            ["১১৭", "জান্নাতুল আশরফুন নাহার", "প্রভাষক", "ব্যবস্থাপনা", "01684-468651"],
-            ["১১৮", "সায়েরা পারভীন", "প্রভাষক", "-", "01714-481669"],
-            ["১১৯", "মো. মইনুল হক", "প্রভাষক", "-", "01671-457080"],
-            ["১২০", "রাজিয়া সুলতানা", "প্রভাষক", "-", "01886-549058"],
-            ["১২১", "মো. শাখাওয়াত হোসেন", "সহযোগী অধ্যাপক (বি.প্র)", "-", "01716-303944"],
-            ["১২২", "মো. কাওছারুল হক", "সহযোগী অধ্যাপক", "-", "01614-040045"],
-            ["১২০", "সায়মুন নাহার", "প্রভাষক", "-", "01767-388975"],
-            ["১২৪", "মো. রুবায়েত হোসেন", "প্রভাষক", "মার্কেটিং", "01778-364730"],
-            ["১২৫", "মো. রফিকুল ইসলাম", "প্রভাষক", "-", "01793-777424"],
-            ["১২৬", "শিরিন জাহান", "প্রভাষক", "-", "01949-985999"],
-            ["১২৭", "সাবেরা ইয়াসমিন", "প্রভাষক", "-", "01933-798060"],
-            ["১২৮", "মোঃ জিয়াউল আহসান", "শরীরচর্চা শিক্ষক", "শারীরিক শিক্ষা ও ক্রীড়া", "01911-236606"]
-        ];
+        // --- Configuration ---
+        const rowsPerPage = 10;
+        let currentPage = 1;
+        let filteredData = [...noticesData];
 
-        // ডেটা রেন্ডার করা (এখানে cite এর ট্যাগটি hidden class দিয়ে আড়াল করা হয়েছে)
-        const tbody = document.getElementById("teachersBody");
-        let htmlContent = "";
+        // --- Render Notices Function ---
+        function renderNotices() {
+            const container = document.getElementById("noticeContainer");
+            const noResults = document.getElementById("noNoticeResults");
+            const paginationContainer = document.getElementById("paginationContainer");
+            container.innerHTML = "";
 
-        teachersData.forEach(t => {
-            let deptBadge = t[3] !== "-" ? `<span class="bg-gray-100 text-baf-blue px-2 py-1 rounded text-xs font-bold border border-gray-200 shadow-sm">${t[3]}</span>` : "-";
-            htmlContent += `
-            <tr class="table-row-card md:table-row bg-white hover:bg-gray-50 transition-colors duration-200 md:border-b border-gray-100">
-                <td data-label="ক্র. নং" class="text-center md:text-left md:px-6 md:py-4">
-                    <span class="search-data font-bold text-gray-500">${t[0]}<span class="hidden">[cite: 1]</span></span>
-                </td>
-                <td data-label="নাম" class="md:px-6 md:py-4">
-                    <span class="search-data font-bold text-baf-blue">${t[1]}<span class="hidden">[cite: 1]</span></span>
-                </td>
-                <td data-label="পদবি" class="md:px-6 md:py-4">
-                    <span class="search-data text-gray-600 font-medium">${t[2]}<span class="hidden">[cite: 1]</span></span>
-                </td>
-                <td data-label="বিভাগ" class="text-center md:px-6 md:py-4">
-                    <span class="search-data">${deptBadge}<span class="hidden">[cite: 1]</span></span>
-                </td>
-                <td data-label="ফোন" class="text-center md:px-6 md:py-4">
-                    <span class="search-data text-gray-700 font-semibold">${t[4]}<span class="hidden">[cite: 1]</span></span>
-                </td>
-            </tr>`;
-        });
+            if (filteredData.length === 0) {
+                container.classList.add("hidden");
+                noResults.classList.remove("hidden");
+                noResults.classList.add("flex");
+                paginationContainer.innerHTML = "";
+                return;
+            }
 
-        tbody.innerHTML = htmlContent;
+            container.classList.remove("hidden");
+            noResults.classList.add("hidden");
+            noResults.classList.remove("flex");
 
-        // Smart Filter Function
-        function filterTeachers() {
-            let input = document.getElementById("teacherSearch").value.toUpperCase();
-            let tr = tbody.getElementsByTagName("tr");
-            let noResults = document.getElementById("noResults");
-            let table = document.getElementById("teachersTable");
-            let matchFound = false;
+            // Calculate start and end index for exactly 10 items
+            const startIndex = (currentPage - 1) * rowsPerPage;
+            const endIndex = startIndex + rowsPerPage;
+            const paginatedItems = filteredData.slice(startIndex, endIndex);
 
-            for (let i = 0; i < tr.length; i++) {
-                let textValue = tr[i].textContent || tr[i].innerText;
-                if (textValue.toUpperCase().indexOf(input) > -1) {
-                    tr[i].style.display = "";
-                    matchFound = true;
+            paginatedItems.forEach(notice => {
+                // Determine Category Colors
+                let catBg = "bg-blue-50"; let catText = "text-blue-600";
+                if (notice.category === "Admission") { catBg = "bg-emerald-50"; catText = "text-emerald-600"; }
+                else if (notice.category === "Events") { catBg = "bg-orange-50"; catText = "text-orange-600"; }
+
+                const newBadgeHTML = notice.isNew ? `<span class="bg-red-600 text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider animate-pulse">New</span>` : '';
+
+                const cardHTML = `
+                <div class="notice-card bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md hover:border-baf-blue/30 transition-all duration-300 flex flex-col sm:flex-row gap-5 items-start sm:items-center group">
+                    <div class="bg-baf-blue group-hover:bg-baf-gold transition-colors text-white group-hover:text-black rounded-lg px-4 py-3 text-center min-w-[80px] shrink-0 shadow-sm border border-transparent group-hover:border-baf-gold/50">
+                        <span class="block text-2xl font-bold font-poppins leading-none">${notice.day}</span>
+                        <span class="block text-xs uppercase tracking-widest mt-1">${notice.month}</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex flex-wrap items-center gap-3 mb-1.5">
+                            ${newBadgeHTML}
+                            <span class="text-xs font-semibold ${catText} ${catBg} px-2 py-0.5 rounded uppercase tracking-wide">${notice.category}</span>
+                        </div>
+                        <a href="#" class="block text-lg font-bold text-gray-900 group-hover:text-baf-blue transition-colors font-serif-title leading-snug mb-2">${notice.title}</a>
+                        <div class="text-xs text-gray-500 font-medium font-poppins flex items-center gap-4">
+                            <span><i class="fa-regular fa-clock text-baf-gold mr-1"></i> Published: ${notice.time}</span>
+                            <span><i class="fa-regular fa-file-pdf text-baf-gold mr-1"></i> PDF (${notice.size})</span>
+                        </div>
+                    </div>
+                    <div class="flex sm:flex-col lg:flex-row gap-2 shrink-0 w-full sm:w-auto mt-2 sm:mt-0">
+                        <a href="#" class="flex-1 sm:flex-none text-center px-4 py-2 rounded border-2 border-gray-200 text-gray-600 hover:border-baf-blue hover:bg-baf-blue hover:text-white transition-colors font-semibold text-sm font-poppins"><i class="fa-regular fa-eye mr-1"></i> View</a>
+                        <a href="#" class="flex-1 sm:flex-none text-center px-4 py-2 rounded bg-[#172542] hover:bg-baf-gold hover:text-black text-white transition-colors font-semibold text-sm font-poppins shadow-sm"><i class="fa-solid fa-download mr-1"></i> Download</a>
+                    </div>
+                </div>`;
+                container.innerHTML += cardHTML;
+            });
+
+            renderPagination();
+        }
+
+        // --- Render Pagination Buttons ---
+        function renderPagination() {
+            const paginationContainer = document.getElementById("paginationContainer");
+            const totalPages = Math.ceil(filteredData.length / rowsPerPage);
+            paginationContainer.innerHTML = "";
+
+            if (totalPages <= 1) return; // No pagination needed if 1 page
+
+            // Prev Button
+            const prevDisabled = currentPage === 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-baf-blue hover:text-white hover:border-baf-blue cursor-pointer";
+            paginationContainer.innerHTML += `<button onclick="changePage(${currentPage - 1})" class="w-10 h-10 rounded-full border border-gray-200 text-gray-500 transition-colors flex items-center justify-center ${prevDisabled}" ${currentPage === 1 ? 'disabled' : ''}><i class="fa-solid fa-angle-left"></i></button>`;
+
+            // Page Numbers
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === currentPage) {
+                    paginationContainer.innerHTML += `<button class="w-10 h-10 rounded-full bg-baf-blue text-white font-bold shadow-md">${i}</button>`;
                 } else {
-                    tr[i].style.display = "none";
+                    paginationContainer.innerHTML += `<button onclick="changePage(${i})" class="w-10 h-10 rounded-full border border-gray-200 text-gray-600 hover:bg-baf-blue hover:text-white hover:border-baf-blue transition-colors font-semibold">${i}</button>`;
                 }
             }
 
-            if (!matchFound && input !== "") {
-                noResults.classList.remove("hidden");
-                noResults.classList.add("flex");
-                table.classList.add("hidden");
-            } else {
-                noResults.classList.add("hidden");
-                noResults.classList.remove("flex");
-                table.classList.remove("hidden");
+            // Next Button
+            const nextDisabled = currentPage === totalPages ? "opacity-50 cursor-not-allowed" : "hover:bg-baf-blue hover:text-white hover:border-baf-blue cursor-pointer";
+            paginationContainer.innerHTML += `<button onclick="changePage(${currentPage + 1})" class="w-10 h-10 rounded-full border border-gray-200 text-gray-500 transition-colors flex items-center justify-center ${nextDisabled}" ${currentPage === totalPages ? 'disabled' : ''}><i class="fa-solid fa-angle-right"></i></button>`;
+        }
+
+        // --- Handle Page Change ---
+        function changePage(page) {
+            const totalPages = Math.ceil(filteredData.length / rowsPerPage);
+            if (page >= 1 && page <= totalPages) {
+                currentPage = page;
+                renderNotices();
+                window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top when page changes
             }
         }
+
+        // --- Search and Filter Logic ---
+        function filterNotices() {
+            const searchInput = document.getElementById("noticeSearch").value.toLowerCase();
+            const categoryInput = document.getElementById("categoryFilter").value;
+
+            filteredData = noticesData.filter(notice => {
+                const matchesSearch = notice.title.toLowerCase().includes(searchInput) || notice.category.toLowerCase().includes(searchInput);
+                const matchesCategory = categoryInput === "All" || notice.category === categoryInput;
+                return matchesSearch && matchesCategory;
+            });
+
+            currentPage = 1; // Reset to page 1 on new search
+            renderNotices();
+        }
+
+        // --- Initial Load ---
+        renderNotices();
     </script>
-    <!-- ================== END TEACHER'S PANEL ================== -->
+    <!-- ================== END NOTICES PANEL ================== -->
+
 
     <!-- ================== FOOTER SECTION ================== -->
     <footer class="bg-[#0d1b2a] text-white pt-16 pb-6 w-full border-t-4 border-baf-gold font-sans-nav">
