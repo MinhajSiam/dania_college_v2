@@ -131,73 +131,64 @@
 
             <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
 
-                <!-- Left: Upload Form -->
-                <div class="xl:col-span-1">
-                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8">
-                        <h3 class="text-lg font-bold text-baf-blue font-poppins mb-6 flex items-center gap-2">
-                            <i class="fa-solid fa-cloud-arrow-up text-baf-gold"></i> Upload New Notice
-                        </h3>
+                <!-- Upload Form (Reverted to Static) -->
+                <form onsubmit="handleNoticeSubmit(event)" class="space-y-5">
 
-                        <form onsubmit="handleNoticeSubmit(event)" class="space-y-5">
-
-                            <!-- Notice Title -->
-                            <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-1.5 font-poppins">Notice
-                                    Title <span class="text-red-500">*</span></label>
-                                <input type="text" required placeholder="Enter notice title..."
-                                    class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-baf-blue focus:ring-2 focus:ring-baf-blue/20 outline-none transition-all text-sm">
-                            </div>
-
-                            <!-- Category & Date Row -->
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label
-                                        class="block text-sm font-semibold text-gray-700 mb-1.5 font-poppins">Category
-                                        <span class="text-red-500">*</span></label>
-                                    <select required
-                                        class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-baf-blue focus:ring-2 focus:ring-baf-blue/20 outline-none transition-all text-sm bg-white">
-                                        <option value="">Select...</option>
-                                        <option value="Academic">Academic</option>
-                                        <option value="Admission">Admission</option>
-                                        <option value="Events">Events</option>
-                                        <option value="General">General</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-1.5 font-poppins">Publish
-                                        Date <span class="text-red-500">*</span></label>
-                                    <input type="date" required
-                                        class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-baf-blue focus:ring-2 focus:ring-baf-blue/20 outline-none transition-all text-sm text-gray-600">
-                                </div>
-                            </div>
-
-                            <!-- File Upload Area (Custom Design) -->
-                            <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-1.5 font-poppins">Attach PDF
-                                    File <span class="text-red-500">*</span></label>
-                                <div
-                                    class="relative border-2 border-dashed border-gray-300 rounded-lg p-6 flex flex-col items-center justify-center hover:bg-gray-50 hover:border-baf-blue transition-colors cursor-pointer group">
-                                    <i
-                                        class="fa-regular fa-file-pdf text-3xl text-gray-400 group-hover:text-baf-gold mb-2 transition-colors"></i>
-                                    <p class="text-sm text-gray-500 font-medium text-center"><span
-                                            class="text-baf-blue font-bold">Click to upload</span> or drag and drop</p>
-                                    <p class="text-xs text-gray-400 mt-1">PDF max size 5MB</p>
-                                    <input type="file" required accept=".pdf"
-                                        class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
-                                </div>
-                            </div>
-
-                            <!-- Submit Button -->
-                            <div class="pt-2">
-                                <button type="submit"
-                                    class="w-full bg-baf-blue hover:bg-[#0d1b2a] text-white font-bold py-3 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 font-poppins">
-                                    <i class="fa-solid fa-paper-plane"></i> Publish Notice
-                                </button>
-                            </div>
-
-                        </form>
+                    <!-- Notice Title -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1.5 font-poppins">Notice Title <span
+                                class="text-red-500">*</span></label>
+                        <input type="text" required placeholder="Enter notice title..."
+                            class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-baf-blue focus:ring-2 focus:ring-baf-blue/20 outline-none transition-all text-sm">
                     </div>
-                </div>
+
+                    <!-- Category & Date Row -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1.5 font-poppins">Category <span
+                                    class="text-red-500">*</span></label>
+                            <select required
+                                class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-baf-blue focus:ring-2 focus:ring-baf-blue/20 outline-none transition-all text-sm bg-white">
+                                <option value="">Select...</option>
+                                <option value="Academic">Academic</option>
+                                <option value="Admission">Admission</option>
+                                <option value="Events">Events</option>
+                                <option value="General">General</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1.5 font-poppins">Publish Date
+                                <span class="text-red-500">*</span></label>
+                            <input type="date" required
+                                class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-baf-blue focus:ring-2 focus:ring-baf-blue/20 outline-none transition-all text-sm text-gray-600">
+                        </div>
+                    </div>
+
+                    <!-- File Upload Area (Custom Design) -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1.5 font-poppins">Attach PDF File
+                            <span class="text-red-500">*</span></label>
+                        <div
+                            class="relative border-2 border-dashed border-gray-300 rounded-lg p-6 flex flex-col items-center justify-center hover:bg-gray-50 hover:border-baf-blue transition-colors cursor-pointer group">
+                            <i
+                                class="fa-regular fa-file-pdf text-3xl text-gray-400 group-hover:text-baf-gold mb-2 transition-colors"></i>
+                            <p class="text-sm text-gray-500 font-medium text-center"><span
+                                    class="text-baf-blue font-bold">Click to upload</span> or drag and drop</p>
+                            <p class="text-xs text-gray-400 mt-1">PDF max size 5MB</p>
+                            <input type="file" required accept=".pdf"
+                                class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="pt-2">
+                        <button type="submit"
+                            class="w-full bg-baf-blue hover:bg-[#0d1b2a] text-white font-bold py-3 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 font-poppins">
+                            <i class="fa-solid fa-paper-plane"></i> Publish Notice
+                        </button>
+                    </div>
+
+                </form>
 
                 <!-- Right: Notices List Table -->
                 <div class="xl:col-span-2">
@@ -350,15 +341,16 @@
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Uploading...';
             btn.classList.add('opacity-80', 'cursor-not-allowed');
 
-            // Simulate API Call (2 seconds)
+            // Simulate API Call (1.5 seconds)
             setTimeout(() => {
-                alert("Success! Notice uploaded successfully.");
+                alert("Success! Notice uploaded successfully (Demo).");
                 e.target.reset(); // Reset form
                 btn.innerHTML = originalText;
                 btn.classList.remove('opacity-80', 'cursor-not-allowed');
             }, 1500);
         }
     </script>
+
 </body>
 
 </html>
