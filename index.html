@@ -7,6 +7,26 @@
     <link rel="icon" href="assets/images/Dania_College_Logo.png" type="image/png">
     <title>Dania College</title>
 
+    <!-- ================== Open Graph (OG) & Social SEO Tags ================== -->
+    <!-- Facebook & WhatsApp -->
+    <meta property="og:site_name" content="Dania College">
+    <meta property="og:title" content="Dania College | Excellence in Education">
+    <meta property="og:description"
+        content="Welcome to Dania College. Stay updated with our latest academic notices, admission circulars, and campus events.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.daniacollege.edu.bd/">
+    <meta property="og:image" content="assets/images/Dania_College_Logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter/X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dania College | Excellence in Education">
+    <meta name="twitter:description"
+        content="Welcome to Dania College. Stay updated with our latest academic notices, admission circulars, and campus events.">
+    <meta name="twitter:image" content="assets/images/Dania_College_Logo.png">
+    <!-- ======================================================================= -->
+
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -1574,10 +1594,21 @@
             // ২. Topbar Marquee তে ডাটা পাঠানো
             const marquee = document.getElementById("topbarMarquee");
             let marqueeHTML = "";
+
             latestNotices.forEach(notice => {
-                let newBadge = notice.isNew ? `<span class="bg-red-600 text-white text-[10px] px-1.5 py-0.5 rounded font-bold mx-2">NEW</span>` : '';
-                marqueeHTML += `<span class="mx-4">${notice.title}</span> ${newBadge} <span class="inline-block w-2 h-2 rounded-full bg-baf-gold mx-2"></span>`;
+                // New ব্যাজ (যদি notice.isNew = true হয়)
+                let newBadge = notice.isNew ? `<span class="bg-[#e63946] text-white text-[10px] px-1.5 py-0.5 rounded font-bold ml-2">NEW</span>` : '';
+
+                // হলুদ Date ব্যাজ
+                let dateBadge = `<span class="bg-[#ffc107] text-black text-[11px] px-2 py-0.5 rounded font-bold ml-2 whitespace-nowrap">${notice.day} ${notice.month}, 2026</span>`;
+
+                // হলুদ ডট সেপারেটর
+                let separator = `<span class="inline-block w-1.5 h-1.5 rounded-full bg-[#ffc107] ml-4"></span>`;
+
+                // একসাথে যুক্ত করা
+                marqueeHTML += `${separator} ${newBadge} ${dateBadge} <span class="ml-3 font-medium text-gray-200">${notice.title}</span>`;
             });
+
             marquee.innerHTML = marqueeHTML;
 
             // ৩. Notice Board এ ডাটা পাঠানো
